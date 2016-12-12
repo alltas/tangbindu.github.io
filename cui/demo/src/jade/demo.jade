@@ -1,0 +1,23 @@
+doctype html
+html
+    head
+        meta(charset="UTF-8")
+        title cui文档-mobile
+        link(rel="stylesheet", href="../css/cui.css")
+        link(rel="stylesheet", href="../css/ui-demo.css")
+    body
+        .wrapper.ui-demo
+            section.ui-group#ui-group
+            section.ui-code#ui-code
+                pre#ui-code-jade.ui-code-jade.prettyprint
+                pre#ui-code-sass.ui-code-sass.prettyprint
+                pre#ui-code-html.ui-code-html.prettyprint
+                pre#ui-code-css.ui-code-css.prettyprint
+            section.ui-view#ui-view
+            #full_screen_view ▷
+        script(src="../js/jquery.js")
+        script(src="../js/CUIData.js")
+        script(src="../js/run_prettify.js")
+        script(src="../js/index.js")
+        style(type="text/css").
+            body{-webkit-user-select:inherit !important;}

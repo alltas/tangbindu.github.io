@@ -1,0 +1,4 @@
+*.o
+.sass-cache/
+node_modules/
+project.js

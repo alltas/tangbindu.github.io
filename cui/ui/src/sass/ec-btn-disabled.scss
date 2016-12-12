@@ -1,0 +1,11 @@
+.ec-btn.ec-btn-disabled{
+  background-color: #e9ebec;
+  color: #ccc;
+  &:after{
+    border-color: #e9ebec;
+  }
+  &:active{
+    color: #ccc;
+    background-color: #e9ebec;
+  }
+}
