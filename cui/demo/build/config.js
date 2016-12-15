@@ -58,6 +58,9 @@ config={
 		"ec-ico":[
 			"ec-ico-limitsale"
 		],
+		"ec-img":[
+			"ec-list-img"
+		],
 		"ec-searchbar":[
 			"ec-searchbar"
 		],
