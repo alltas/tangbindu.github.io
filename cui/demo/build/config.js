@@ -38,7 +38,8 @@ config={
 			"ui-avatar.ui-avatar-s"
 		],
 		"text":[
-			"text-block"
+			"text-block",
+			"ec-textblock-list"
 		],
 		"ec-btn":[
 			"ec-btn",
