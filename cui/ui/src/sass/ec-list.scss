@@ -1,0 +1,21 @@
+.ec-list {
+  background-color: #fff;
+  width: 100%;  
+  >li{
+    position: relative;
+    margin-left: 12px;
+    display: -webkit-box;
+    min-height: 40px;
+    h4 {
+      font-size: 16px;
+      line-height: 20px;
+      padding: 10px 0;
+      color: #000;
+    }
+    &.ui-border-t:first-child,
+    &:first-child>.ui-border-t{
+      border: none;
+      background-image: none; 
+    }
+  }
+}

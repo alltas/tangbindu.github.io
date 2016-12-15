@@ -65,6 +65,9 @@ config={
 			"list",
 			"list.list-rule"
 		],
+		"ec-list":[
+			"ec-list.ui-border-tb"
+		],
 		"ui-slider":[
 			"ui-slider"
 		],
