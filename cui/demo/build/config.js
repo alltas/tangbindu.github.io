@@ -55,6 +55,9 @@ config={
 			"ec-grid.ec-grid-img.ec-grid-3",
 			"ec-grid.ec-grid-img.ec-grid-4"
 		],
+		"ec-ico":[
+			"ec-ico-limitsale"
+		],
 		"ec-searchbar":[
 			"ec-searchbar"
 		],
