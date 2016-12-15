@@ -54,6 +54,9 @@ config={
 			"ec-grid.ec-grid-img.ec-grid-3",
 			"ec-grid.ec-grid-img.ec-grid-4"
 		],
+		"ec-searchbar":[
+			"ec-searchbar"
+		],
 		"ec-copyright":[
 			"ec-copyright"
 		],
@@ -105,7 +108,8 @@ config={
 	"iframe":[
 		"dialog",
 		"card-page",
-		"ui-slider"
+		"ui-slider",
+		"ec-searchbar"
 	],
 	//不显示的组合
 	"noview":[
