@@ -4,6 +4,10 @@
  * @property {object} cuilist 按名字顺序显示组件
  * @property {string} cuiNameListTemplate cui组件名称view模版
  */
+
+
+
+
 config={
 	"widgetGroup":{
 		"init":[
@@ -25,7 +29,12 @@ config={
 			"ui-border-b",
 			"ui-border-l",
 			"ui-border-r",
-			"ui-border-tb"
+			"ui-border-tb",
+			"lm-border-t",
+			"lm-border-b",
+			"lm-border-l",
+			"lm-border-r",
+			"lm-border-tb"
 		],
 		"ui-list":[
 			"ui-list.ui-border-tb",
@@ -35,7 +44,8 @@ config={
 		],
 		"ui-avatar":[
 			"ui-avatar",
-			"ui-avatar.ui-avatar-s"
+			"ui-avatar.ui-avatar-s",
+			"lm-avatar"
 		],
 		"text":[
 			"text-block",
@@ -75,6 +85,19 @@ config={
 			"ec-list.ui-border-tb",
 			"ec-list-v1"
 		],
+		"lm-list":[
+			"lm-list",
+			"lm-list.lm-list-avatar",
+			"lm-list.lm-list-type1"
+		],
+		"lm-widget":[
+			"lm-widget1",
+			"lm-widget2",
+			"lm-widget-banner"
+		],
+		"lm-tab":[
+			"lm-tab"
+		],
 		"ui-slider":[
 			"ui-slider"
 		],
@@ -111,6 +134,7 @@ config={
 			"style-animation",
 			"style-nowrap-multi",
 			"ui-nowrap",
+			"lm-nowrap",
 			"ui-list-info",
 			"ui-list-avatar"
 		],
@@ -141,4 +165,5 @@ config={
 	"outputCUICssPath":"../../dist/css/cui.css"
 }
 module.exports=config;
+
 
