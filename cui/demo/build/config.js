@@ -107,6 +107,9 @@ config={
 		"dialog":[
 			"dialog"
 		],
+		"swipe":[
+			"swipe"
+		],
 		"js-link":[
 			"js-zepto.min",
 			"js-rem.min",
@@ -142,6 +145,7 @@ config={
 	//iframe结构的
 	"iframe":[
 		"dialog",
+		"swipe",
 		"card-page",
 		"ui-slider",
 		"ec-searchbar"

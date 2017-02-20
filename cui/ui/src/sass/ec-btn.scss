@@ -1,37 +1,31 @@
 .ec-btn {
-  font-size: 14px;
-  line-height: 30px;
   position: relative;
   display: inline-block;
+  -webkit-box-sizing: border-box;
   min-width: 50px;
   height: 30px;
+  line-height: 30px;
+  font-size: 14px;
   padding: 0 10px;
   text-align: center;
   vertical-align: top;
   color: #ff7f00;
   border: 0 none;
-  border-radius: 5px;
+  border-radius: 3px;
   background-color: #ffffff;
   background-clip: padding-box;
   &:after {
+    -webkit-box-sizing: border-box;
     position: absolute;
     top: 0;
     left: 0;
-    -webkit-box-sizing: border-box;
     width: 100%;
     height: 100%;
     content: '';
     border: 1px solid #cacccd;
-    border-radius: 5px;
+    border-radius: 3px;
   }
-  &:active {
-    color: #f9b979;
-    outline: none;
-    background-color: #f2f2f2;
-  }
-}
-@media screen and (-webkit-min-device-pixel-ratio: 2) {
-  .ec-btn{
+  @media screen and (-webkit-min-device-pixel-ratio: 2) {
     &:after{
       width: 200%;
       height: 200%;
@@ -39,5 +33,10 @@
       -webkit-transform-origin:left top;
       -webkit-transform:scale(.5);
     }
+  }
+  &:active {
+    outline: none;
+    color: #f9b979;
+    background-color: #f2f2f2;
   }
 }
