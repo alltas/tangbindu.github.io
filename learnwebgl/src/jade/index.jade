@@ -1,0 +1,45 @@
+doctype html
+html(data-use-rem)
+  head
+    meta(charset="utf-8")
+    meta(name="format-detection", content="telephone=no")
+    meta(name="viewport", content="width=device-width,initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no")
+    meta(name="apple-mobile-web-app-capable", content="yes")
+    meta(name="apple-mobile-web-app-status-bar-style", content="black")
+    meta(name="description",content="")
+    meta(name="keywords",content="")
+    title webgl学习笔记
+  body(ontouchstart="")
+    .category
+    //demo1
+    section#demo1
+      H1 纯颜色填充画布
+      canvas(id="demo1_canvas")
+      script(src="../js/demo1.js")
+    //demo2
+    section#demo2
+      H1 清空画布（时隔3秒）
+      canvas(id="demo2_canvas")
+      script(src="../js/demo2.js")
+    //demo3
+    section#demo3
+      H1 绘制一个point
+      canvas(id="demo3_canvas")
+      script(src="../js/demo3.js")
+    //demo4
+    section#demo4
+      H1 绘制xxxx
+      canvas(id="demo4_canvas")
+      script(src="../js/demo4.js")
+    //demo5
+    section#demo5
+      H1 绘制xxxx
+      canvas(id="demo5_canvas")
+      script(src="../js/demo5.js")
+
+
+    script(src="../js/common/jquery.min.js")
+    script(src="../js/common/index.js")
+    script(src="../js/common/run_prettify.js")
+    link(rel="stylesheet",href="../css/index.css")
+    link(rel="stylesheet",href="../css/code.css")
