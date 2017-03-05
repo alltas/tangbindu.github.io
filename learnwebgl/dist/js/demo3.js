@@ -22,7 +22,7 @@ var demo3=function(){
       'void main() {',
       '  gl_FragColor = vec4(1.0, 1.0, 0.0, 1.0);', //Set the point color
       '}'
-    ].join("\n");
+    ].join("\n"); //
   //初始化着色器 gl,顶点代码，片源代码
   initShaders(demo3_canvas_gl, VSHADER_SOURCE, FSHADER_SOURCE);
   //设置清除的色彩模型
