@@ -59,6 +59,10 @@ p{
   background-color:#fff;
   border-radius:3px;
   box-shadow:0px 0px 3px #666;
+  opacity: .1;
+  &:hover{
+    opacity: 1;
+  }
   ul{
     list-style: none;
     width: 150px;
@@ -81,3 +85,30 @@ p{
     }
   }
 }
+
+
+
+section:nth-child(2){
+  display: none;
+}
+section:nth-child(3){
+  display: none;
+}
+section:nth-child(2){
+  display: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
