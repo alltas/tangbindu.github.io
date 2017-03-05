@@ -225,9 +225,10 @@ body{
     		text-align: center;
     		dl{
     			display: inline-block;
+    			vertical-align: top;
     			//background-color: #fff;
 					width:375px;
-					height: 600px;
+					//height: 600px;
 					box-shadow: 0px 0px 1px #ccc;
 					margin: 5px;
 					overflow: hidden;

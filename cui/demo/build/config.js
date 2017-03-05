@@ -5,9 +5,6 @@
  * @property {string} cuiNameListTemplate cui组件名称view模版
  */
 
-
-
-
 config={
 	"widgetGroup":{
 		"init":[
@@ -24,28 +21,24 @@ config={
 			"ui-btn.ui-btn-lg.ui-btn-primary",
 			"ui-btn.ui-btn-lg.ui-btn-danger"
 		],
-		"ui-border":[
-			"ui-border-t",
-			"ui-border-b",
-			"ui-border-l",
-			"ui-border-r",
-			"ui-border-tb",
-			"lm-border-t",
-			"lm-border-b",
-			"lm-border-l",
-			"lm-border-r",
-			"lm-border-tb"
+		"c-border":[
+			"c-border-t",
+			"c-border-b",
+			"c-border-l",
+			"c-border-r",
+			"c-border-tb"
 		],
 		"ui-list":[
-			"ui-list.ui-border-tb",
-			"ui-list.ui-list-function.ui-border-tb",
-			"ui-list.ui-list-avatar.ui-border-tb",
-			"ui-list.ui-list-avatar.ui-list-function.ui-border-tb"
+			"ui-list.c-border-tb",
+			"ui-list.ui-list-function.c-border-tb",
+			"ui-list.ui-list-avatar.c-border-tb",
+			"ui-list.ui-list-avatar.ui-list-function.c-border-tb"
 		],
 		"ui-avatar":[
 			"ui-avatar",
 			"ui-avatar.ui-avatar-s",
-			"lm-avatar"
+			"lm-avatar",
+			"ec-avatar"
 		],
 		"text":[
 			"text-block",
@@ -68,9 +61,6 @@ config={
 		"ec-ico":[
 			"ec-ico-limitsale"
 		],
-		"ec-img":[
-			"ec-list-img"
-		],
 		"ec-searchbar":[
 			"ec-searchbar"
 		],
@@ -82,7 +72,7 @@ config={
 			"list.list-rule"
 		],
 		"ec-list":[
-			"ec-list.ui-border-tb",
+			"ec-list.c-border-tb",
 			"ec-list-v1"
 		],
 		"lm-list":[
@@ -120,12 +110,11 @@ config={
 			"js-ui.slider.min",
 		],
 		"class":[
-			"nowrap",
-			"nowrap-multi"
+			"c-nowrap",
+			"c-nowrap-multi"
 		],
 		"style":[
 			"style-font",
-			"style-nowrap",
 			"style-layout-absolute",
 			"style-layout-full-absolute",
 			"style-background",
@@ -136,10 +125,7 @@ config={
 			"style-keyframes",
 			"style-animation",
 			"style-nowrap-multi",
-			"ui-nowrap",
-			"lm-nowrap",
-			"ui-list-info",
-			"ui-list-avatar"
+			"style-nowrap"
 		],
 	},
 	//iframe结构的

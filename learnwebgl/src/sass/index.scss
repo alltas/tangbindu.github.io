@@ -6,9 +6,14 @@ body{
   line-height: 1.5;
   //padding:10px;
   //background-color: #fff;
+  //background-image: url(../img/opacity.png);
+  background-position:left top;
+  background-repeat: repeat;
+  background-color: #fff;
+  background-size: 80px auto;
 }
 h1{
-  //background:#f2f2f2;
+  background:#fff;
   font-size: 24px;
   font-weight: 100;
   padding-top:10px;
@@ -21,7 +26,7 @@ section{
   //padding:10px;
   margin:5px;
   padding-bottom:20px;
-  background:#fff;
+  //background:#fff;
   overflow: hidden;
 }
 // section *:not(h1){

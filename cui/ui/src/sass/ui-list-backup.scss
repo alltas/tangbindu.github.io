@@ -29,8 +29,8 @@
   padding-left: 15px;
   margin-left: 0px;
 }
-.ui-list > li.ui-border-t:first-child,
-.ui-list > li:first-child > .ui-border-t {
+.ui-list > li.c-border-t:first-child,
+.ui-list > li:first-child > .c-border-t {
   border: none;
   background-image: none;
 }
@@ -113,9 +113,9 @@
 }
 .ui-list-active > li:active,
 .ui-list > li.active,
-.ui-list > li.active > .ui-border-t,
-.ui-list > li.active + li > .ui-border-t,
-.ui-list > li.active + li.ui-border-t{
+.ui-list > li.active > .c-border-t,
+.ui-list > li.active + li > .c-border-t,
+.ui-list > li.active + li.c-border-t{
   background-image: none;
   border-top-color: #e5e6e7;
 }
