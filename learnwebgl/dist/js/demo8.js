@@ -1,6 +1,6 @@
-//o6改变点的颜色（片源着色器）
-var demo6=function(){
-  var gl=initwebgl(demo6_canvas);
+//o8绘制三角形
+var demo8=function(){
+  var gl=initwebgl(demo8_canvas);
   //-------private-------
   //顶点着色器
   var VSHADER_SOURCE = [

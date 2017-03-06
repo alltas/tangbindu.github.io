@@ -1,7 +1,6 @@
-//o1填充画布
-var demo1=function(){
+function initwebgl(canvas){
   //webgl object
-  var gl,canvas=demo1_canvas;
+  var gl;
   //定宽高（适配retina）
   canvas.width=canvas.clientWidth*window.devicePixelRatio;
   canvas.height=canvas.clientHeight*window.devicePixelRatio;
@@ -13,4 +12,5 @@ var demo1=function(){
   gl.clearColor(0.0, 0.68, 0.3, 1.0);
   //清理画布
   gl.clear(gl.COLOR_BUFFER_BIT);
-}()
+  return gl;
+}

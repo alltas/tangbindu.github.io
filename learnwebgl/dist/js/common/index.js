@@ -3,7 +3,9 @@ $("section script").each(function(i,elem){
   var script=$(this)
   $.get($(this).attr("src"),function(data){
     if(data.length<1) return;
-    var title=data.slice(0,data.indexOf("\n")).replace(/\//g,"");
+    data=data.replace(/</g,"&lt;").replace(/>/g,"&gt;")
+    var title=data.slice(0,data.indexOf("\n")+1).replace(/\//g,"");
+    //console.log("title"+title)
     $('<pre class="prettyprint">'+data+"</pre>").insertBefore(script);
     script.parent().prepend($('<h1>'+title+"</h1>"));
   })
