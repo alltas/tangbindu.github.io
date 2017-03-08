@@ -1,6 +1,6 @@
-//o8绘制线条
-var demo8=function(){
-  var gl=initwebgl(demo8_canvas);
+//o9绘制三角形
+var demo9=function(){
+  var gl=initwebgl(demo9_canvas);
   //-------private-------
   //顶点着色器
   var VSHADER_SOURCE = [
@@ -48,7 +48,7 @@ var demo8=function(){
   // 启用变量
   gl.enableVertexAttribArray(position);
   //统一绘制
-  gl.drawArrays(gl.LINES, 0, vertices.length/2);
+  gl.drawArrays(gl.TRIANGLES , 0, vertices.length/2);
 }()
 //总结
 //LINES(default) LINE_STRIP LINE_LOOP TRIANGLES TRIANGLE_STRIP TRIANGLE_FAN
