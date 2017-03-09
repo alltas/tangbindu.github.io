@@ -46,7 +46,7 @@ function nodeWrapIframe(node){
 	console.dir(ifr)
 	ifr.setAttribute("frameborder","0");
 	node.append($(ifr))
-	//ifr.src="http://10.66.67.159:8001/dist/html/demo.html";
+	//ifr.src="https://10.66.67.159:8001/dist/html/demo.html";
 	//追加样式
 	var doc = ifr.contentWindow.document;
 
