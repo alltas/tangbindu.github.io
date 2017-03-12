@@ -10,7 +10,7 @@ var demo1=function(){
   //定视图区
   gl.viewport(0, 0, canvas.width,canvas.height);
   //定色彩模型
-  gl.clearColor(0.0, 0.68, 0.3, 1.0);
+  gl.clearColor(122/255, 222/250, 170/255, 1.0);
   //清理画布
   gl.clear(gl.COLOR_BUFFER_BIT);
 }()

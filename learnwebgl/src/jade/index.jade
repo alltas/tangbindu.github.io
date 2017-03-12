@@ -9,65 +9,13 @@ html(data-use-rem)
     meta(name="description",content="")
     meta(name="keywords",content="")
     title webgl手记
-  body(ontouchstart="")
     script(src="../js/common/util.js")
+  body(ontouchstart="")
+    -for(var i=1;i<20;i++)
+      section(id="demo#{i}")
+        canvas(id="demo#{i}_canvas")
+        script(src="../js/demo#{i}.js")
     .category
-    //demo1
-    section#demo1
-      canvas(id="demo1_canvas")
-      script(src="../js/demo1.js")
-    //demo2
-    section#demo2
-      canvas(id="demo2_canvas")
-      script(src="../js/demo2.js")
-    //demo3
-    section#demo3
-      canvas(id="demo3_canvas")
-      script(src="../js/demo3.js")
-    //demo4
-    section#demo4
-      canvas(id="demo4_canvas")
-      script(src="../js/demo4.js")
-    //demo5
-    section#demo5
-      canvas(id="demo5_canvas")
-      script(src="../js/demo5.js")
-    //demo6
-    section#demo6
-      canvas(id="demo6_canvas")
-      script(src="../js/demo6.js")
-    //demo7
-    section#demo7
-      canvas(id="demo7_canvas")
-      script(src="../js/demo7.js")
-    //demo8
-    section#demo8
-      canvas(id="demo8_canvas")
-      script(src="../js/demo8.js")
-    //demo9
-    section#demo9
-      canvas(id="demo9_canvas")
-      script(src="../js/demo9.js")
-    //demo10
-    section#demo10
-      canvas(id="demo10_canvas")
-      script(src="../js/demo10.js")
-    //demo11
-    section#demo11
-      canvas(id="demo11canvas")
-      script(src="../js/demo11js")
-    //demo12
-    section#demo12
-      canvas(id="demo12canvas")
-      script(src="../js/demo12js")
-    //demo13
-    section#demo13
-      canvas(id="demo13canvas")
-      script(src="../js/demo13js")
-    //demo14
-    section#demo14
-      canvas(id="demo14canvas")
-      script(src="../js/demo14js")
 
 
     script(src="../js/common/jquery.min.js")

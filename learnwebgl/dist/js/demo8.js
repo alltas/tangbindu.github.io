@@ -17,7 +17,7 @@ var demo8=function(){
     //'uniform vec4 fragColor;',
     'void main() {',
     //'  gl_FragColor = fragColor;', //Set the point color
-    '  gl_FragColor = vec4(0.0,0.0,0.0,1.0);', //Set the point color
+    '  gl_FragColor = vec4(1.0,1.0,0.0,1.0);', //Set the point color
     '}'
   ].join("\n");
   //初始化着色器 gl,顶点代码，片元代码

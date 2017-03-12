@@ -8,6 +8,10 @@ $("section script").each(function(i,elem){
     //console.log("title"+title)
     $('<pre class="prettyprint">'+data+"</pre>").insertBefore(script);
     script.parent().prepend($('<h1>'+title+"</h1>"));
+    //if(getComputedStyle(document.getElementById("demo13"))["display"]=="none"){return false}
+    if(getComputedStyle(script[0].parentNode)["display"]=="none"){
+      script.parent().find("pre").removeClass("prettyprint");
+    }
   })
 })
 
