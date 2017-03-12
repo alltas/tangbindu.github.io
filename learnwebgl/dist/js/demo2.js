@@ -9,7 +9,7 @@ var demo2=function(){
   },3000)
   setTimeout(function(){
     //记得四个浮点数为0, 如果任何一个不为0都会与后面的色彩进行叠加计算
-    gl.clearColor(122/255, 222/250, 170/255, 1.0);
+    gl.clearColor(23/255, 48/250, 41/255, 1.0);
     gl.clear(gl.COLOR_BUFFER_BIT);
   },3200)
 }()
