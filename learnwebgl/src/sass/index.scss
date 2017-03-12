@@ -21,11 +21,11 @@ h1{
   line-height:1.5em;
 }
 section{
-  margin-bottom: 40px;
+  margin-bottom: 20px;
   //border-bottom:1px dashed #ccc;
   //padding:10px;
-  margin:5px;
-  padding-bottom:20px;
+  //margin:5px;
+  //padding-bottom:20px;
   //background:#fff;
   overflow: hidden;
 }
@@ -85,7 +85,9 @@ p{
     }
   }
 }
-
+::-webkit-scrollbar {/*隐藏滚轮*/
+  display: none;
+}
 
 
 @for $i from 0 through 10{
@@ -93,6 +95,7 @@ p{
     //display: none;
   } 
 }
+
 
 
 
