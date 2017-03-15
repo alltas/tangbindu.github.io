@@ -1,0 +1,92 @@
+{"frames": {
+
+"heroframe1.png":
+{
+	"frame": {"x":0,"y":0,"w":115,"h":159},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":115,"h":159},
+	"sourceSize": {"w":115,"h":159}
+},
+"heroframe2.png":
+{
+	"frame": {"x":0,"y":159,"w":115,"h":159},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":115,"h":159},
+	"sourceSize": {"w":115,"h":159}
+},
+"heroframe3.png":
+{
+	"frame": {"x":0,"y":318,"w":115,"h":159},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":115,"h":159},
+	"sourceSize": {"w":115,"h":159}
+},
+"heroframe4.png":
+{
+	"frame": {"x":0,"y":477,"w":115,"h":159},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":115,"h":159},
+	"sourceSize": {"w":115,"h":159}
+},
+"heroframe5.png":
+{
+	"frame": {"x":0,"y":636,"w":109,"h":142},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":109,"h":142},
+	"sourceSize": {"w":109,"h":142}
+},
+"heroframe6.png":
+{
+	"frame": {"x":0,"y":778,"w":115,"h":159},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":115,"h":159},
+	"sourceSize": {"w":115,"h":159}
+},
+"heroframe7.png":
+{
+	"frame": {"x":0,"y":937,"w":112,"h":157},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":112,"h":157},
+	"sourceSize": {"w":112,"h":157}
+},
+"heroframe8.png":
+{
+	"frame": {"x":0,"y":1094,"w":115,"h":146},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":115,"h":146},
+	"sourceSize": {"w":115,"h":146}
+},
+"heroframe9.png":
+{
+	"frame": {"x":0,"y":1240,"w":115,"h":159},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":115,"h":159},
+	"sourceSize": {"w":115,"h":159}
+},
+"heroframe10.png":
+{
+	"frame": {"x":0,"y":1399,"w":115,"h":159},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":115,"h":159},
+	"sourceSize": {"w":115,"h":159}
+}},
+"meta": {
+	"app": "http://www.codeandweb.com/texturepacker",
+	"version": "1.0",
+	"image": "heroframe.png",
+	"format": "RGBA8888",
+	"size": {"w":115,"h":1558},
+	"scale": "1",
+	"smartupdate": "$TexturePacker:SmartUpdate:5212892912b5a721b61bcdc45b4fd763:ee033f4220db19e340efd9f17f2d383c:3694a16ffe1006c8eb97391fe9efafe5$"
+}
+}

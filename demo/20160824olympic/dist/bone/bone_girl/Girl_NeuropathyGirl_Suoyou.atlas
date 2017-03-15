@@ -1,0 +1,244 @@
+
+Girl_NeuropathyGirl_Suoyou.png
+size: 1024,256
+format: RGBA4444
+filter: Linear,Linear
+repeat: none
+Bottle
+  rotate: false
+  xy: 136, 11
+  size: 115, 168
+  orig: 115, 168
+  offset: 0, 0
+  index: -1
+Eye_Basicclose_00
+  rotate: true
+  xy: 947, 113
+  size: 83, 59
+  orig: 83, 59
+  offset: 0, 0
+  index: -1
+Eye_Basicdoubt_00
+  rotate: false
+  xy: 636, 74
+  size: 81, 64
+  orig: 81, 64
+  offset: 0, 0
+  index: -1
+Eye_Basicopen_00
+  rotate: false
+  xy: 861, 132
+  size: 84, 64
+  orig: 84, 64
+  offset: 0, 0
+  index: -1
+Eye_Basicwink_00
+  rotate: false
+  xy: 765, 131
+  size: 94, 66
+  orig: 94, 66
+  offset: 0, 0
+  index: -1
+Eye_Run_00
+  rotate: false
+  xy: 902, 198
+  size: 92, 56
+  orig: 92, 56
+  offset: 0, 0
+  index: -1
+Eyes_Expression/Eye_Happiness_00
+  rotate: false
+  xy: 292, 20
+  size: 91, 52
+  orig: 91, 52
+  offset: 0, 0
+  index: -1
+Forearm_Left
+  rotate: false
+  xy: 444, 77
+  size: 30, 74
+  orig: 30, 74
+  offset: 0, 0
+  index: -1
+Forearm_Right
+  rotate: false
+  xy: 834, 57
+  size: 30, 72
+  orig: 30, 72
+  offset: 0, 0
+  index: -1
+Fringe_Back
+  rotate: false
+  xy: 292, 153
+  size: 182, 101
+  orig: 182, 101
+  offset: 0, 0
+  index: -1
+Fringe_Front
+  rotate: false
+  xy: 565, 93
+  size: 69, 71
+  orig: 69, 71
+  offset: 0, 0
+  index: -1
+Hair_Back
+  rotate: false
+  xy: 2, 22
+  size: 132, 157
+  orig: 132, 157
+  offset: 0, 0
+  index: -1
+Hair_Left
+  rotate: true
+  xy: 292, 74
+  size: 39, 137
+  orig: 39, 137
+  offset: 0, 0
+  index: -1
+Hair_Right
+  rotate: true
+  xy: 765, 199
+  size: 55, 135
+  orig: 55, 135
+  offset: 0, 0
+  index: -1
+Head
+  rotate: true
+  xy: 637, 140
+  size: 114, 126
+  orig: 114, 126
+  offset: 0, 0
+  index: -1
+HeadDress
+  rotate: false
+  xy: 918, 65
+  size: 40, 46
+  orig: 40, 46
+  offset: 0, 0
+  index: -1
+HighFiveLight01
+  rotate: true
+  xy: 385, 22
+  size: 50, 43
+  orig: 50, 43
+  offset: 0, 0
+  index: -1
+HighFiveLight02
+  rotate: false
+  xy: 866, 87
+  size: 50, 43
+  orig: 50, 43
+  offset: 0, 0
+  index: -1
+HighFiveLight03
+  rotate: false
+  xy: 866, 42
+  size: 50, 43
+  orig: 50, 43
+  offset: 0, 0
+  index: -1
+Iron01
+  rotate: true
+  xy: 2, 181
+  size: 73, 288
+  orig: 73, 288
+  offset: 0, 0
+  index: -1
+Iron02
+  rotate: false
+  xy: 476, 120
+  size: 87, 44
+  orig: 87, 44
+  offset: 0, 0
+  index: -1
+Month_CazryRun_00
+  rotate: false
+  xy: 960, 77
+  size: 48, 34
+  orig: 48, 34
+  offset: 0, 0
+  index: -1
+Mouth_Expression/Mouth_Angry_04
+  rotate: true
+  xy: 996, 222
+  size: 32, 4
+  orig: 32, 4
+  offset: 0, 0
+  index: -1
+Mouth_Expression/Mouth_Scare_04
+  rotate: true
+  xy: 2, 2
+  size: 18, 27
+  orig: 18, 27
+  offset: 0, 0
+  index: -1
+Mouth_Run_00
+  rotate: true
+  xy: 918, 33
+  size: 30, 45
+  orig: 30, 45
+  offset: 0, 0
+  index: -1
+Mouth_basic_00
+  rotate: false
+  xy: 918, 113
+  size: 20, 17
+  orig: 20, 17
+  offset: 0, 0
+  index: -1
+Mouth_basic_01
+  rotate: false
+  xy: 253, 14
+  size: 23, 14
+  orig: 23, 14
+  offset: 0, 0
+  index: -1
+Mouth_basic_02
+  rotate: false
+  xy: 253, 2
+  size: 20, 10
+  orig: 20, 10
+  offset: 0, 0
+  index: -1
+Pants_Front
+  rotate: false
+  xy: 758, 67
+  size: 74, 62
+  orig: 74, 62
+  offset: 0, 0
+  index: -1
+Pants_Left
+  rotate: false
+  xy: 253, 30
+  size: 37, 149
+  orig: 37, 149
+  offset: 0, 0
+  index: -1
+Pants_Right
+  rotate: true
+  xy: 292, 115
+  size: 36, 150
+  orig: 36, 150
+  offset: 0, 0
+  index: -1
+Tops
+  rotate: true
+  xy: 476, 166
+  size: 88, 159
+  orig: 88, 159
+  offset: 0, 0
+  index: -1
+Upperarm_Left
+  rotate: false
+  xy: 719, 56
+  size: 37, 82
+  orig: 37, 82
+  offset: 0, 0
+  index: -1
+Upperarm_Right
+  rotate: true
+  xy: 476, 81
+  size: 37, 83
+  orig: 37, 83
+  offset: 0, 0
+  index: -1

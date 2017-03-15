@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html data-use-rem>
+  <head>
+    <meta charset="utf-8">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="viewport" content="width=device-width, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <title>标题</title>
+    <link rel="stylesheet" href="../css/index.css">
+  </head>
+  <body ontouchstart="">
+  <div class="page page-game show" style="background:none"></div>
+  <script src="../js/zepto.js"></script>
+  <script src="../js/pixi.v3.js"></script>
+  <script src="../js/dust.js"></script>
+  <script>
+  
+  function loadTexture(gameresources,callback){
+    this.loader=PIXI.loader.add(gameresources)
+    this.loader.load(callback)
+  }
+  loadTexture([{name:"roadfacestuff",url:"../img/roadfacestuff.json"},{name:"gamebg",url:"../img/gamebg.png"}],function(){
+    var renderer = PIXI.autoDetectRenderer(
+      document.body.clientWidth,
+      document.body.clientHeight,
+      {
+        backgroundColor:0x9de3e5,
+        resolution: 2
+      },
+      false
+    );
+    var du = new Dust(PIXI);
+    var starContainer=new PIXI.particles.ParticleContainer(
+      1500,
+      {alpha: true, scale: true, rotation: true, uvs: true}
+    );
+    starContainer.x=100;
+    starContainer.y=300;
+    particleStream = du.emitter(
+      17,
+      function(){
+        return du.create(
+          0,                                       //x start position
+          0,                                       //y start position
+          function(){
+            return new PIXI.Sprite(PIXI.loader.resources.roadfacestuff.textures["star.png"]);
+          }, 
+          starContainer,                                     //Container for particles
+          10,                                       //Number of particles
+          0.01,                                  //Gravity
+          true,                                 //Random spacing
+          0, 6.28,                             //Min/max angle
+          2, 40,                                //Min/max size
+          5, 10 ,                              //Min/max speed
+          // 0.005, 0.01,                          //Min/max scale speed 
+          0.01, 0.02                          //Min/max alpha speed
+          // 0.05, 0.1                             //Min/max rotation speed
+        )
+      }
+    );
+
+
+    var gamebg=new PIXI.Sprite(PIXI.loader.resources.gamebg.texture);
+    gamebg.width=$(window).width();
+    gamebg.height=$(window).height();
+
+    var _stage = new PIXI.Stage();
+    _stage.addChild(gamebg);
+    _stage.addChild(starContainer);
+
+
+    $('.page-game').append(renderer.view);
+    particleStream.play();
+    function refresh() {
+        du.update();
+        renderer.render(_stage);
+        //循环动画
+        requestAnimationFrame(refresh);
+    }
+    refresh()
+  })
+
+  </script>
+ 
+  </body>
+</html>

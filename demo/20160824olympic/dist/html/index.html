@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html data-use-rem>
+  <head>
+    <meta charset="utf-8">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="viewport" content="width=device-width, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <title>厘米人小游戏</title>
+    <link rel="stylesheet" href="../css/index.css">
+  </head>
+  <body ontouchstart="">
+    <!--故事页-->
+    <div class="page page-story hide">
+      <div class="stage stageA anima">
+        <div class="elem elem1 fadeInUp">
+          <div class="elem elem2 fadeInRight">
+            <div class="in floatmove"></div>
+          </div>
+        </div>
+      </div>
+      <div class="stage stageB">
+        <div class="elem elem1 fadeInUp">
+          <div class="elem elem2 fadeInUp"></div>
+          <div class="elem elem3 fadeInRight">
+            <div class="in shock"></div>
+          </div>
+        </div>
+      </div>
+      <div class="stage stageC">
+        <div class="elem elem1 fadeInUp">
+          <div class="elem elem3 fadeInRight">
+            <div class="in"></div>
+          </div>
+        </div>
+        <div class="elem elem2 fadeInUp">
+          <div class="elem elem4 fadeInRight">
+            <div class="in shock"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--进入页面-->
+    <div class="page page-index hide">
+      <div class="theme-elem">
+        <h1 class="gametitle">逃离失控人类的病栋</h1>
+        <div class="role">
+          <div class="boy">
+            <div class="sos"></div>
+            <div class="loader"><span></span><span></span></div>
+          </div>
+          <div class="girl">
+            <div class="why"></div>
+            <div class="loader"><span></span><span></span></div>
+          </div>
+        </div>
+      </div>
+      <div class="explainandview">
+        <div class="explain"></div>
+        <div class="ghost"></div>
+        <div class="viewprize"></div>
+      </div>
+      <div class="hole"></div>
+      <!--透视层-->
+      <div class="perspective">
+        <div class="boneman top delay1"></div>
+        <div class="smallanimal1 top delay4"></div>
+        <div class="smallanimal2 bottom delay8"></div>
+        <div class="syringe left delay9"></div>
+        <div class="boneman bottom delay5"></div>
+        <div class="smallanimal1 right delay6"></div>
+        <div class="smallanimal2 left delay9"></div>
+        <div class="syringe right delay3"></div>
+        <div class="syringe up delay2"></div>
+        <div class="smallanimal1 up delay7"></div>
+        <div class="syringe right delay8"></div>
+        <div class="syringe up delay8"></div>
+        <div class="smallanimal1 up delay3"></div>
+      </div>
+    </div>
+    <!--loading页-->
+    <div class="page page-loading hide">
+      <!--动画容器-->
+      <div class="loading-wrap">
+        <div class="loading-boy"></div>
+      </div>
+      <p>玩命加载中...</p>
+      <!--文案-->
+      <!--滚动提示-->
+      <div class="play-tips"></div>
+    </div>
+    <!--游戏页面-->
+    <div class="page page-game show">
+      <!--角标-->
+      <div class="gameconer"></div>
+      <!--进度-->
+      <div class="progresswrap">
+        <div class="progress">
+          <div class="head boyhead"></div>
+        </div>
+      </div>
+      <!--礼品-->
+      <div class="prizewrap">
+        <div class="prize"></div>
+        <div data='0' class="num"></div>
+        <div data="split" class="num"></div>
+        <div data='5' class="num"></div>
+      </div>
+      <!--游戏结束面板-->
+      <div class="dialog gameoverDialog hide">
+        <div class="mask"></div>
+        <div class="content">
+          <div class="warn"></div>
+          <div class="close"></div>
+          <div class="content-in">
+            <div class="body">
+              <div class="box boxtop tcenter">
+                <!--失败-->
+                <div class="imgico challengefailuretitle"></div>
+                <!--成功-->
+                <!--.imgico.challengesuccesstitle-->
+              </div>
+              <div class="tcenter wrap1">
+                <!--女孩-->
+                <!--.imgico.iblock.illustration-girl-->
+                <!--男孩-->
+                <div class="imgico iblock illustration-boy"></div>
+                <div class="iblock style1">
+                  <div class="box">
+                    <div class="imgico iblock finish"></div>
+                    <div data="8" class="imgico iblock pnum"></div>
+                    <div data="0" class="imgico iblock pnum"></div>
+                    <div class="imgico iblock percent"></div>
+                  </div>
+                  <p class="tcenter">据说你和制杖据说你和制杖据说你和制杖据说你和制杖据说你和制杖</p>
+                </div>
+              </div>
+              <div class="box btn style3">
+                <!--再玩一次的按钮-->
+                <button type="button" class="imgico playagin-btn againGameBtn"></button>
+              </div>
+              <div class="style4">
+                <h3>本轮你获得以下物品</h3>
+                <p>(院长不想和你说话并向你丢了以下的东东)</p>
+              </div>
+              <div class="box">
+                <div class="prizebox iblock">
+                  <div class="imgico prizemask"></div>
+                  <div data="1" class="imgico iblock prize"></div>
+                </div>
+                <div class="prizebox iblock">
+                  <div class="imgico iblock prizemask"></div>
+                  <div data="2" class="imgico iblock prize"></div>
+                </div>
+                <div class="prizebox iblock">
+                  <div class="imgico iblock prizemask"></div>
+                  <div data="3" class="imgico iblock prize"></div>
+                </div>
+                <div class="prizebox iblock">
+                  <div class="imgico iblock prizemask"></div>
+                  <div data="4" class="imgico iblock prize"></div>
+                </div>
+                <div class="prizebox iblock">
+                  <div class="imgico iblock prizemask"></div>
+                  <div data="5" class="imgico iblock prize"></div>
+                </div>
+              </div>
+              <div class="btn-group">
+                <div class="imgico iblock show-btn"></div>
+                <div class="imgico iblock use-btn"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--活动说明-->
+    <div class="dialog ruleDialog hide">
+      <div class="mask"></div>
+      <div class="content">
+        <div class="warn"></div>
+        <div class="close"></div>
+        <div class="content-in">
+          <div class="body">
+            <div class="box">
+              <div class="imgico illustration-prison"></div>
+            </div>
+            <div class="box font32b mt10">我特喵真的没病</div>
+            <div class="border6 mt20"></div>
+            <div class="box"><span class="font88b">活动</span>
+              <div class="imgico boy"></div><span class="font88b">说明</span>
+            </div>
+            <div class="border6 mt10 mb10"></div>
+            <div class="min-title"><span>可以大喊大叫&nbsp;| &nbsp;</span><span>可以摔手机&nbsp;| &nbsp;</span><span>不准随地大小便</span></div>
+            <div class="ul list list-rule">
+              <li>●  挑战“逃离失控人类の病栋”即可赢取厘米秀的专属装扮和动作！</li>
+              <li>●  每轮6个礼包随机发放，不限挑战次数。多次挑战获得更好成绩。</li>
+              <li>●  本活动惊现一伙的QQ厘米秀体验资格的用户参与。</li>
+              <li>●  本活动需安装6.3.5及以上的手机QQ版本。</li>
+              <li>●  在法律允许范围内，腾讯公司拥有最终解释   权，对本活动有任何疑问或咨询，请联系腾讯在线客服反馈。</li>
+              <li>●  反馈地址：kf.qq.com</li>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--奖励-->
+    <div class="dialog prizeDialog hide">
+      <div class="mask"></div>
+      <div class="content">
+        <div class="warn"></div>
+        <div class="close"></div>
+        <div class="content-in">
+          <div class="body">
+            <div class="box">
+              <div class="imgico illustration-prison"></div>
+            </div>
+            <div class="box font32b mt10">熊孩子你该吃药了</div>
+            <div class="border6 mt20"></div>
+            <div class="box"><span class="iblock font88b">游戏</span>
+              <div class="imgico iblock illustration-bottle"></div><span class="iblock font88b">奖励</span>
+            </div>
+            <div class="border6 mt10 mb10"></div>
+            <ul class="ec-grid ec-grid-img ec-grid-4">
+              <li>
+                <div class="grid-img">
+                  <div class="prize-box">
+                    <div data="1" class="imgico prize"></div>
+                  </div>
+                </div><span class="name">痴呆脸</span>
+              </li>
+              <li>
+                <div class="grid-img">
+                  <div class="prize-box">
+                    <div data="2" class="imgico prize"></div>
+                  </div>
+                </div><span class="name">冰栋上衣</span>
+              </li>
+              <li>
+                <div class="grid-img">
+                  <div class="prize-box">
+                    <div data="3" class="imgico prize"></div>
+                  </div>
+                </div><span class="name">冰栋长裤</span>
+              </li>
+              <li>
+                <div class="grid-img">
+                  <div class="prize-box">
+                    <div data="4" class="imgico prize"></div>
+                  </div>
+                </div><span class="name">吊瓶背饰</span>
+              </li>
+              <li>
+                <div class="grid-img">
+                  <div class="prize-box">
+                    <div data="5" class="imgico prize"></div>
+                  </div>
+                </div><span class="name">白木脸</span>
+              </li>
+              <li>
+                <div class="grid-img">
+                  <div class="prize-box">
+                    <div data="6" class="imgico prize"></div>
+                  </div>
+                </div><span class="name">失控上衣</span>
+              </li>
+              <li>
+                <div class="grid-img">
+                  <div class="prize-box">
+                    <div data="7" class="imgico prize"></div>
+                  </div>
+                </div><span class="name">病栋短裤</span>
+              </li>
+              <li>
+                <div class="grid-img">
+                  <div class="prize-box">
+                    <div data="8" class="imgico prize"></div>
+                  </div>
+                </div><span class="name">咋啦动作</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--游戏分享后的客人态-->
+    <div class="dialog gameshareDialog hide">
+      <div class="mask"></div>
+      <div class="content">
+        <div class="warn"></div>
+        <div class="close"></div>
+        <div class="content-in">
+          <div class="body">
+            <div class="box">
+              <!--难以置信-->
+              <div class="imgico sharetitle"></div>
+            </div>
+            <div class="box wrap1">
+              <!--女孩-->
+              <!--.imgico.iblock.illustration-girl-->
+              <!--男孩-->
+              <div class="imgico iblock illustration-boy"></div>
+              <div class="iblock">
+                <P class="tcenter"><span>你的好友</span><span>张小龙</span></P>
+                <div class="box">
+                  <div class="imgico iblock finish"></div>
+                  <div data="8" class="imgico iblock pnum"></div>
+                  <div data="0" class="imgico iblock pnum"></div>
+                  <div class="imgico iblock percent"></div>
+                </div>
+                <p class="tcenter"><span>获得了</span><span>N</span><span>件奖品！</span></p>
+              </div>
+            </div>
+            <div class="box btn">
+              <!--再玩一次的按钮-->
+              <button type="button" class="imgico iplay-btn"></button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+      (function(win){var doc=win.document,html=doc.documentElement,option=html.getAttribute("data-use-rem");if(option===null){return}var baseWidth=parseInt(option).toString()=="NaN"?750:parseInt(option);var grids=baseWidth/100;var clientWidth=html.clientWidth||320;html.style.fontSize=clientWidth/grids+"px";var testDom=document.createElement("div");var testDomWidth=0;var adjustRatio=0;testDom.style.cssText="height:0;width:1rem;";doc.body.appendChild(testDom);var calcTestDom=function(){testDomWidth=testDom.offsetWidth;if(testDomWidth!==Math.round(clientWidth/grids)){adjustRatio=clientWidth/grids/testDomWidth;var reCalcRem=clientWidth*adjustRatio/grids;html.style.fontSize=reCalcRem+"px"}else{doc.body.removeChild(testDom)}};setTimeout(calcTestDom,20);var reCalc=function(){var newCW=html.clientWidth;if(newCW===clientWidth){return}clientWidth=newCW;html.style.fontSize=newCW*(adjustRatio?adjustRatio:1)/grids+"px"};reCalc();if(!doc.addEventListener){return}var resizeEvt="orientationchange" in win?"orientationchange":"resize";win.addEventListener(resizeEvt,reCalc,false);doc.addEventListener("DOMContentLoaded",reCalc,false)})(window);
+      
+    </script>
+    <script src="../js/zepto.js"></script>
+    <script>
+      //当前页面交互
+      $(".page-story .stage").bind("click",function(){
+          if($(this)[0].className.indexOf("stageC")>0){
+              $(this).parent().remove();
+              $(".page-index").addClass("show");
+          }
+          $(this).next().addClass("anima");
+          $(this).remove();
+      });
+      $(".role div").bind("click",function(){
+          if($(this).hasClass("boy")){
+              window.gameroletype="boy"
+              $(".page-index").addClass("choiseboy");
+          }else{
+              window.gameroletype="girl";
+              $(".page-index").addClass("choisegirl");
+          }
+          setTimeout(function(){
+              $(".page-index").remove();
+              $(".page-game").addClass("show");
+          },1000)
+      })
+      
+    </script>
+    <!--异步加载-->
+    <script src="../js/pixi.v3.js"></script>
+    <script src="../js/pixi-spine.js"></script>
+    <script src="../js/dust.js"></script>
+    <!--异步加载-->
+    <script src="../js/index.js"></script>
+    <script src="../js/control.js"></script>
+  </body>
+</html>
