@@ -712,25 +712,25 @@ $("#resize-icon-btn").bind("click", function() {
 //-------------------------------前台-调整尺寸-留白-----------------------------
 //调整尺寸
 $("#resize-icon-padding-btn").bind("click", function() {
-        var padding = $("#resize-icon-padding-val").val();
-        var resize_Images = $("#clip-img-wrap img.active");
-        if (padding < 0 || padding > 5000 || resize_Images.length == 0) {
-            return false;
-        }
-        $("#resize-icon-padding-val").val("");
-        resize_Images.each(function() {
-            w = $(this)[0].naturalWidth - 0 + padding * 2;
-            h = $(this)[0].naturalHeight - 0 + padding * 2;
-            $(this).parent().find(".icon-info").text(w + "*" + h);
-            resizeImage($(this)[0], {
-                "origin": "c_c",
-                "width": w,
-                "height": h
-            })
+    var padding = $("#resize-icon-padding-val").val();
+    var resize_Images = $("#clip-img-wrap img.active");
+    if (padding < 0 || padding > 5000 || resize_Images.length == 0) {
+        return false;
+    }
+    $("#resize-icon-padding-val").val("");
+    resize_Images.each(function() {
+        w = $(this)[0].naturalWidth - 0 + padding * 2;
+        h = $(this)[0].naturalHeight - 0 + padding * 2;
+        $(this).parent().find(".icon-info").text(w + "*" + h);
+        resizeImage($(this)[0], {
+            "origin": "c_c",
+            "width": w,
+            "height": h
         })
     })
-    //-------------------------------前台-调整尺寸-留白-----------------------------
-    //调整尺寸
+})
+//-------------------------------前台-调整尺寸-留白-----------------------------
+//调整尺寸
 $("#resize-icon-even").bind("click", function() {
     var resize_Images = $("#clip-img-wrap img");
     if (resize_Images.length == 0) {
@@ -749,7 +749,39 @@ $("#resize-icon-even").bind("click", function() {
         })
     })
 })
-
+//-------------------------------get style-----------------------------
+//get style
+$(".style-dialog .close").bind("click",function(){
+    $(".style-dialog").removeClass("show");
+})
+$("#get-style").bind("click", function() {
+    var styledialog=$(".style-dialog");
+    var imgs=$("#clip-img-wrap").find("img[name]");
+    function showstyle(img){
+        var name=$(img).attr("name").slice(0,$(img).attr("name").indexOf("."));
+        var width=($(img).width()/100).toFixed(2);
+        var height=($(img).height()/100).toFixed(2);
+        return [
+            " ",
+            "."+name+"{",
+                "    width:"+width+"rem",
+                "    height:"+height+"rem",
+                "    background-image:url(../img/"+name+".png)",
+            "}"
+        ].join("\n");
+    }
+    var template="{}"
+    if(imgs.length==0){
+        alert("没有已命名的图片，请先上传后获取style")
+    }else{
+        styledialog.addClass("show");
+        var styles="";
+        for(var i=0;i<imgs.length;i++){
+            styles+=showstyle(imgs.eq(i))
+        }
+        styledialog.find("textarea").val(styles); 
+    }
+})
 
 //调整图片
 /*
