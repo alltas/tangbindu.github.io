@@ -2,9 +2,9 @@
 var demo21=function(){
   var ctx=initCanvas(demo21_canvas);
   var img=new Image();
-  img.src="../img/bombframes.png";
+  img.src="../img/bombframes2.png";
   img.onload=function(){
-    window.fxo21=new FrameXx({
+    window.fxo21=new FrameAnimation({
       "img":img,
       "ctx":ctx,
       "framesNum":5,
@@ -17,7 +17,7 @@ var demo21=function(){
 }()
 
 //x轴帧动画
-function FrameXx(param){
+function FrameAnimation(param){
   param=param || {};
   this.img=param.img;//加载完毕的对象
   this.framesNum=param.framesNum;
@@ -38,7 +38,7 @@ function FrameXx(param){
     this.frameHeight=this.img.height;//帧高
   }).call(this)
 }
-FrameXx.prototype={
+FrameAnimation.prototype={
   //插入一个帧动画
   insetOneFramesAnimation:function(){
     var self=this;
@@ -52,11 +52,20 @@ FrameXx.prototype={
     this.frameAnimationGroups.unshift(oneFramesAnimation);
   },
   playFrame:function(){
-    this.ctx.globalAlpha=.6 ;
     //console.dir(this.frameAnimationGroups)
+    if(this.frameAnimationGroups.length==2){
+      this.ctx.globalAlpha=.8;
+    }else if(this.frameAnimationGroups.length==3){
+      this.ctx.globalAlpha=.6;
+    }else if(this.frameAnimationGroups.length==4){
+      this.ctx.globalAlpha=.4;
+    }else if(this.frameAnimationGroups.length==5){
+      this.ctx.globalAlpha=.2;
+    }else{
+      this.ctx.globalAlpha=1;
+    }
     this.ctx.clearRect(0,0,this.ctxW,this.ctxH);
     for(var i=0;i<this.frameAnimationGroups.length;i++){
-
       //播放第一帧
       this.ctx.drawImage(
         this.img,
@@ -95,52 +104,6 @@ FrameXx.prototype={
         return;
       }
     },100)
-    //console.dir(this.timmer)
-    // if(this.timmer){
-    //   return false;
-    // }
-    // if(this.timmer){return}
-    // this.timmer=setInterval(function(){
-    //   self.ctx.clearRect(0,0,self.ctxW,self.ctxH);
-    //   if(self.frameAnimationGroups.length==0){
-    //     clearInterval(self.timmer);
-    //     return;
-    //   }
-    //   self.playFrame();
-    // },this.time)
-
-    // setTimeout(function(){
-    //   clearInterval(self.timmer);
-    //   self.timmer=null;
-    // },this.time*6)
-
-
-
-    // var self=this;
-    // self.status="play";
-    // var timmer=null;
-    // var currentStep=0;
-    // timmer=setInterval(function(){
-    //   if(currentStep>self.framesNum){
-    //     self.status=null;
-    //     clearInterval(timmer);
-    //     return false;
-    //   }
-    //   //绘制
-    //   self.ctx.clearRect(0,0,self.ctxW,self.ctxH);
-    //   self.ctx.drawImage(
-    //     self.img,
-    //     self.frameWidth*currentStep++,
-    //     0,
-    //     self.frameWidth,
-    //     self.frameHeight,
-    //     self.x,
-    //     self.y,
-    //     self.frameWidth,
-    //     self.frameHeight
-    //   );
-    //   //结束绘制
-    // },self.time)
   }
 }
 
