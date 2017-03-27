@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html data-use-rem="750">
+  <head>
+    <meta charset="utf-8">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="viewport" content="width=device-width,initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <title>奥特曼打小怪兽</title>
+    <link rel="stylesheet" href="../css/index.css">
+  </head>
+  <body ontouchstart="">
+    <!--.loading
+    .skip 跳过
+    #loading_video
+    -->
+    <script src="../js/rem.min.js"></script>
+    <!--预加载的音乐资源-->
+    <div class="pre_load">
+      <audio src="../img/sound/attack_sound1.mp3" id="attack_sound1"></audio>
+      <audio src="../img/sound/attack_sound2.mp3" id="attack_sound2"></audio>
+      <audio src="../img/sound/attack_sound3.mp3" id="attack_sound3"></audio>
+      <audio src="../img/sound/attack_sound4.mp3" id="attack_sound4"></audio>
+    </div>
+    <!--指引页-->
+    <!--故事页-->
+    <div class="page p-story hide">
+      <header>
+        <div class="img-ico floor1"></div>
+        <div class="img-ico role_dd_dark">
+          <div class="touch"></div>
+        </div>
+        <div class="img-ico rold_dd hide"></div>
+        <div class="img-ico role_gml_dark hide">
+          <div class="touch"></div>
+        </div>
+        <div class="img-ico role_gml"></div>
+        <div class="img-ico role_mkls_dark">
+          <div class="touch"></div>
+        </div>
+        <div class="img-ico role_mkls hide"></div>
+        <div class="img-ico role_xbrt_dark">
+          <div class="touch"></div>
+        </div>
+        <div class="img-ico role_xbrt hide"></div>
+        <div class="img-ico theme_title"></div>
+        <div class="img-ico btn_ksyx_large"></div>
+      </header>
+      <section class="sec-floor1">
+        <div class="img-ico stt"></div>
+        <ul class="ec-grid ec-grid-img ec-grid-2">
+          <li>
+            <div class="grid-img">
+              <div class="img-ico _name name_brt"></div>
+              <div class="img-ico _role role_xbrt_min"></div>
+              <div class="img-ico _btn"></div>
+            </div>
+          </li>
+          <li class="lock">
+            <div class="grid-img">
+              <div class="img-ico _name name_dd"></div>
+              <div class="img-ico _role role_dd_min"></div>
+              <div class="img-ico _btn"></div>
+            </div>
+          </li>
+          <li class="lock">
+            <div class="grid-img">
+              <div class="img-ico _name name_mkls"></div>
+              <div class="img-ico _role role_mkls_min"></div>
+              <div class="img-ico _btn"></div>
+            </div>
+          </li>
+          <li class="lock">
+            <div class="grid-img">
+              <div class="img-ico _name name_gml"></div>
+              <div class="img-ico _role role_gml_min"></div>
+              <div class="img-ico _btn"></div>
+            </div>
+          </li>
+        </ul>
+      </section>
+      <section class="sec-floor2">
+        <div class="img-ico floor2"></div>
+        <div class="img-ico gsthb"></div>
+      </section>
+      <section class="sec-floor3">
+        <div class="img-ico floor3">
+          <div class="img-ico btn_ckxq_large"></div>
+        </div>
+      </section>
+      <div class="img-ico body_bg"></div>
+      <div class="img-ico role_mask"></div>
+      <div class="img-ico rule"></div>
+    </div>
+    <!--游戏页-->
+    <div id="p_game" class="page p-game">
+      <!--进度-->
+      <div class="progresswrap">
+        <div style="-webkig-transform:scale(0,1)" id="timeHourglass" class="progress"></div>
+      </div>
+      <!---->
+      <div id="viewprogress" class="viewprogress">0%</div>
+      <!--礼物-->
+      <div class="gift"><span>0</span></div>
+      <!--宝塔-->
+      <ul id="tower" class="tower">
+        <!--三的倍数-->
+        <li type="" class="floor">
+          <div direction="" class="G"></div>
+          <div direction="" class="U"></div>
+        </li>
+        <li type="" class="floor">
+          <div direction="" class="G"></div>
+          <div direction="" class="U"></div>
+        </li>
+        <li type="" class="floor">
+          <div direction="" class="G"></div>
+          <div direction="" class="U"></div>
+        </li>
+        <li type="" class="floor">
+          <div direction="" class="G"></div>
+          <div direction="" class="U"></div>
+        </li>
+        <li type="" class="floor">
+          <div direction="" class="G"></div>
+          <div direction="" class="U"></div>
+        </li>
+        <li type="" class="floor">
+          <div direction="" class="G"></div>
+          <div direction="" class="U"></div>
+        </li>
+        <li type="" class="floor">
+          <div direction="" class="G"></div>
+          <div direction="" class="U"></div>
+        </li>
+        <li type="" class="floor">
+          <div direction="" class="G"></div>
+          <div direction="" class="U"></div>
+        </li>
+        <li type="" class="floor">
+          <div direction="" class="G"></div>
+          <div direction="" class="U"></div>
+        </li>
+      </ul>
+      <!--怪兽－骨骼动画-->
+      <canvas id="monsterStage"></canvas>
+      <!--摧毁特效-->
+      <div class="tower_break">
+        <canvas id="tower_break_canvas"></canvas>
+      </div>
+      <!--站位，touch event-->
+      <div id="standLeft" class="stand"></div>
+      <div id="standRight" class="stand"></div>
+      <!--浮层页 dialog_a 失败-->
+      <div class="dialog dialog_style1 dialog_a hide">
+        <div class="mask"></div>
+        <div class="content">
+          <div class="body">
+            <!--失败-->
+            <div class="img-ico d_sb marginCenter mt20"></div>
+            <!--text-->
+            <div class="whbox recode-text"><span>历史最高完成92%</span></div>
+            <!--text-->
+            <div class="whbox recode-score mt10">
+              <div class="img-ico d_dq"></div><span data="8" class="num"></span><span data="0" class="num"></span><span data="%" class="num"></span>
+            </div>
+            <!--text-->
+            <div class="whbox recode-words"><span>你知道我们怪兽没有屁股有多苦吗？我们要拉粑粑！</span></div>
+            <!--再玩一次-->
+            <div class="img-ico d_xyyx marginCenter mt10"></div>
+            <!--虽然失败但是获得以下奖励品-->
+            <div class="img-ico d_sy marginCenter mt10"></div>
+            <ul class="ec-grid ec-grid-img ec-grid-info ec-grid-3 mt10">
+              <li>
+                <div class="grid-img"><span style="background-image:url(../img/dialog/dj_wz.png)"></span></div>
+                <div class="grid-info">
+                  <div class="title">独特气味袜子</div>
+                </div>
+              </li>
+              <li>
+                <div class="grid-img"><span style="background-image:url(../img/dialog/dj_sdt.png)"></span></div>
+                <div class="grid-info">
+                  <div class="title">手电筒</div>
+                </div>
+              </li>
+              <li>
+                <div class="grid-img"><span style="background-image:url(../img/dialog/dj_fz.png)"></span></div>
+                <div class="grid-info">
+                  <div class="title">踩坏的房子</div>
+                </div>
+              </li>
+              <li>
+                <div class="grid-img"><span style="background-image:url(../img/dialog/dj_fdj.png)"></span></div>
+                <div class="grid-info">
+                  <div class="title">放大镜</div>
+                </div>
+              </li>
+              <li>
+                <div class="grid-img"><span style="background-image:url(../img/dialog/dj_dxg.png)"></span></div>
+                <div class="grid-info">
+                  <div class="title">补丁电线杆</div>
+                </div>
+              </li>
+              <li>
+                <div class="grid-img"><span style="background-image:url(../img/dialog/dj_st.png)"></span></div>
+                <div class="grid-info">
+                  <div class="title">手汗手套</div>
+                </div>
+              </li>
+            </ul>
+            <div class="whbox mt10">
+              <div class="img-ico d_ckxq mr50"></div>
+              <div class="img-ico d_zwyc"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--浮层页 dialog_b 成功-->
+      <div class="dialog dialog_style1 dialog_b hide">
+        <div class="mask"></div>
+        <div class="content">
+          <div class="body">
+            <!--失败-->
+            <div class="img-ico d_cg marginCenter mt40"></div>
+            <!--text-->
+            <div class="whbox recode-words mt10"><span>终于夺回心爱的屁股！可以舒舒服服拉臭臭了！这么爽还不赶快炫耀下</span></div>
+            <!--text-->
+            <!--text-->
+            <div class="whbox recode-score mt10">
+              <div class="img-ico d_dq"></div><span data="1" class="num"></span><span data="0" class="num"></span><span data="0" class="num"></span><span data="%" class="num"></span>
+            </div>
+            <!--text-->
+            <div class="whbox recode-words mt10"><span><b>恭喜你解锁了米库拉斯</b></span></div>
+            <div class="whbox">
+              <div class="img-ico d_light whbox">
+                <div class="img-ico d_fk2 marginCenter">
+                  <!--role_mkls role_xbrt role_dd role_gml--><span style="background-image:url(../img/dialog/role_mkls.png)"></span>
+                </div>
+              </div>
+            </div>
+            <div class="whbox">
+              <div class="img-ico d_dqtbg mr50"></div>
+              <div class="img-ico d_xyyx_2"></div>
+            </div>
+            <div class="img-ico d_bl marginCenter mt10"></div>
+            <ul class="ec-grid ec-grid-img ec-grid-info ec-grid-3 mt5">
+              <li>
+                <div class="grid-img"><span style="background-image:url(../img/dialog/dj_wz.png)"></span></div>
+                <div class="grid-info">
+                  <div class="title">独特气味袜子</div>
+                </div>
+              </li>
+              <li>
+                <div class="grid-img"><span style="background-image:url(../img/dialog/dj_sdt.png)"></span></div>
+                <div class="grid-info">
+                  <div class="title">手电筒</div>
+                </div>
+              </li>
+              <li>
+                <div class="grid-img"><span style="background-image:url(../img/dialog/dj_fz.png)"></span></div>
+                <div class="grid-info">
+                  <div class="title">踩坏的房子</div>
+                </div>
+              </li>
+              <li>
+                <div class="grid-img"><span style="background-image:url(../img/dialog/dj_fdj.png)"></span></div>
+                <div class="grid-info">
+                  <div class="title">放大镜</div>
+                </div>
+              </li>
+              <li>
+                <div class="grid-img"><span style="background-image:url(../img/dialog/dj_dxg.png)"></span></div>
+                <div class="grid-info">
+                  <div class="title">补丁电线杆</div>
+                </div>
+              </li>
+              <li>
+                <div class="grid-img"><span style="background-image:url(../img/dialog/dj_st.png)"></span></div>
+                <div class="grid-info">
+                  <div class="title">手汗手套</div>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <!--浮层页 dialog_c 其他-->
+      <div class="dialog dialog_c">
+        <div class="mask"></div>
+        <div class="content">
+          <div class="body">
+            <!--text-->
+            <div class="whbox recode-text"><span>还差20%就能夺回自己的屁股啦</span></div>
+            <div class="img-ico d_lj marginCenter mt30"></div>
+            <div class="img-ico d_gold30 marginCenter mt30"></div>
+            <div class="img-ico d_js marginCenter mt30"></div>
+            <div class="whbox mt30">
+              <div class="img-ico d_fq mr50"></div>
+              <div class="img-ico d_fh2"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="../js/zepto.min.js"></script>
+    <script src="../js/spine.min.js"></script>
+    <script src="../js/spinePlus.min.js?sd"></script>
+    <script src="../js/snow.js"></script>
+    <script src="../js/game.js?23238923"></script>
+    <script src="../js/IceVideo.js"></script>
+    <script>
+      var ice =new IceVideo({
+        frameHeight: 1334,       //video的帧高----必填
+        frameWidth: 750,        //video的帧宽----必填
+        areaId: 'loading_video',      //盛放video播放的外层<div>的id值----必填
+        videoId: 'icevideo',    //组件生成的<video>标签的id值----必填
+        canvas: false,               //canvas+隐藏video方案进行播放，false表示使用传统video方案播放----必填
+        canvasId: 'icecanvas',      //canvas+隐藏video方案创建<canvas>标签的id值----必填
+        direction: 'landscape',      //portrait表示横向视频全屏适配，landscape表示竖向适配----必填
+        poster: '../img/loading/video_poster.jpg',        //video首帧封面图url----必填
+        srcs: ['../img/loading/loading750.mp4'],       //video url路径，是一个数组，支持多种格式，多种格式时数组内的格式排序书写上需要与srcTypes顺序一一对应----必填   
+        srcTypes: ['mp4'],      //播放video的文件格式，是一个数组,支持多种格式,多种格式时数组内的格式排序书写上需要与srcs顺序一一对应----必填
+        adaptation: 'center',     //竖型视频适配时候选择的视频方案，auto为自适应方案，center为中心对称缩放方案----必填
+        replay: false,           //true表示重复播放，false表示不重复播放----必填
+        playCallBack: function(time){       //正式开始播放时(即出现画面那一刻)调用的回调函数----选填
+            //alert('播放启动时间为:'+time+'毫秒'); 
+            //业务可以进行time的上报，统计vide0的播放启动时间
+        },
+        pauseCallBack: function(){          //暂停播放时调用的回调函数----选填
+            //alert('播放暂停');
+        },
+        endedCallBack: function(){          //播放结束时调用的回调函数----选填
+            //alert('播放结束了');
+            //此处可执行播放结束的回调函数用于业务后续处理
+        },
+        errorCallBack: function(errCode){       //播放异常时调用的回调函数----选填
+            //alert('播放错误，错误码为:'+errCode);
+        },
+        destoryCallBack: function(){            //销毁IceVideo时调用的回调函数----选填
+            //alert('销毁IceVideo对象');
+        },
+        nocanvasCallBack: function(){           //不支持canvas时调用的回调函数----选填
+            //alert('不支持canvas方案');
+            //此处业务可以针对UA进行不支持canvas的上报统计
+        }
+      });
+      
+      //调用播放接口自动播放
+      ice.play();  
+      
+      
+      
+      
+    </script>
+  </body>
+</html>

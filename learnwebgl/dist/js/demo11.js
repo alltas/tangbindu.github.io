@@ -1,5 +1,6 @@
 //o11平移三角形
 var demo11=function(){
+  return false;
   var gl=initwebgl(demo11_canvas);
   //-------private-------
   //顶点着色器

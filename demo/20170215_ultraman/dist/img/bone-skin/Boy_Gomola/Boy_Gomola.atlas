@@ -1,0 +1,195 @@
+
+Boy_Gomola.png
+size: 1024,256
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Eye_00
+  rotate: false
+  xy: 886, 208
+  size: 99, 46
+  orig: 99, 46
+  offset: 0, 0
+  index: -1
+Eye_Basicclose_00
+  rotate: false
+  xy: 437, 48
+  size: 86, 36
+  orig: 86, 36
+  offset: 0, 0
+  index: -1
+Eye_Basicdoubt_00
+  rotate: false
+  xy: 886, 102
+  size: 86, 50
+  orig: 86, 50
+  offset: 0, 0
+  index: -1
+Eye_Basicopen_00
+  rotate: false
+  xy: 907, 2
+  size: 86, 50
+  orig: 86, 50
+  offset: 0, 0
+  index: -1
+Eye_Basicwink_00
+  rotate: false
+  xy: 299, 36
+  size: 84, 48
+  orig: 84, 48
+  offset: 0, 0
+  index: -1
+Eye_faint_00
+  rotate: false
+  xy: 886, 154
+  size: 98, 52
+  orig: 98, 52
+  offset: 0, 0
+  index: -1
+Face_Omament
+  rotate: false
+  xy: 987, 201
+  size: 33, 53
+  orig: 33, 53
+  offset: 0, 0
+  index: -1
+Faint00
+  rotate: false
+  xy: 527, 41
+  size: 167, 69
+  orig: 167, 69
+  offset: 0, 0
+  index: -1
+Faint01
+  rotate: false
+  xy: 705, 184
+  size: 179, 70
+  orig: 179, 70
+  offset: 0, 0
+  index: -1
+Faint02
+  rotate: false
+  xy: 705, 112
+  size: 179, 70
+  orig: 179, 70
+  offset: 0, 0
+  index: -1
+Forearm_Left
+  rotate: false
+  xy: 777, 15
+  size: 64, 95
+  orig: 64, 95
+  offset: 0, 0
+  index: -1
+Forearm_Right
+  rotate: false
+  xy: 974, 54
+  size: 47, 98
+  orig: 47, 98
+  offset: 0, 0
+  index: -1
+Head
+  rotate: false
+  xy: 299, 86
+  size: 226, 168
+  orig: 226, 168
+  offset: 0, 0
+  index: -1
+HighFiveLight01
+  rotate: false
+  xy: 907, 57
+  size: 50, 43
+  orig: 50, 43
+  offset: 0, 0
+  index: -1
+HighFiveLight02
+  rotate: false
+  xy: 2, 20
+  size: 50, 43
+  orig: 50, 43
+  offset: 0, 0
+  index: -1
+HighFiveLight03
+  rotate: false
+  xy: 385, 41
+  size: 50, 43
+  orig: 50, 43
+  offset: 0, 0
+  index: -1
+Mouth_basic_00
+  rotate: false
+  xy: 139, 22
+  size: 78, 45
+  orig: 78, 45
+  offset: 0, 0
+  index: -1
+Mouth_basic_01
+  rotate: false
+  xy: 54, 21
+  size: 70, 42
+  orig: 70, 42
+  offset: 0, 0
+  index: -1
+Mouth_basic_02
+  rotate: false
+  xy: 225, 41
+  size: 72, 34
+  orig: 72, 34
+  offset: 0, 0
+  index: -1
+Pants_Left
+  rotate: false
+  xy: 139, 69
+  size: 84, 185
+  orig: 84, 185
+  offset: 0, 0
+  index: -1
+Pants_Right
+  rotate: false
+  xy: 225, 77
+  size: 72, 177
+  orig: 72, 177
+  offset: 0, 0
+  index: -1
+Tail
+  rotate: false
+  xy: 527, 112
+  size: 176, 142
+  orig: 176, 142
+  offset: 0, 0
+  index: -1
+Tops
+  rotate: false
+  xy: 2, 65
+  size: 135, 189
+  orig: 135, 189
+  offset: 0, 0
+  index: -1
+Upperarm_Left
+  rotate: false
+  xy: 696, 15
+  size: 79, 95
+  orig: 79, 95
+  offset: 0, 0
+  index: -1
+Upperarm_Right
+  rotate: false
+  xy: 843, 10
+  size: 62, 90
+  orig: 62, 90
+  offset: 0, 0
+  index: -1
+eye00
+  rotate: false
+  xy: 986, 175
+  size: 29, 24
+  orig: 29, 24
+  offset: 0, 0
+  index: -1
+eye01
+  rotate: false
+  xy: 995, 28
+  size: 22, 24
+  orig: 22, 24
+  offset: 0, 0
+  index: -1

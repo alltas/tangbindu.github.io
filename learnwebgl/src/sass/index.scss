@@ -90,15 +90,17 @@ p{
 }
 
 
-@for $i from 0 through 10{
+@for $i from 0 through 19{
   section:nth-child(#{$i}){
-    //display: none;
+    display: none;
   } 
 }
 
 
 
-
+// body{
+//   width: 200px;
+// }
 
 
 
