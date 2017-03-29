@@ -17,6 +17,7 @@ var TimeHourglass={
           this.Game.gameoverStatus=1;
           console.log("沙漏死亡")
           self.game.trigger("over");
+          sound.playGameOver();
           self.status=false;
           return;
         }
@@ -309,19 +310,13 @@ var Tower={
         var gift=$(this.firstFloor()).find(".G");
         if(gift.attr("direction")){ 
           this.Game.gift++;
+          sound.playGift();
           //刷新礼物
           $(".gift span").text("x"+this.Game.gift);
           gift.attr("direction","");
         }
       }
     }
-    // if(nextFloorInfo.G){
-    //   if((curFloorInfo.G==1 && this.attack=="left") || (curFloorInfo.G==2 && this.attack=="right")){
-    //     this.Game.gift++;
-    //     //刷新礼物
-    //     $(".gift span").text("x"+this.Game.gift)
-    //   }
-    // }
 
     if(curFloorInfo.U){
       if((curFloorInfo.U==1 && this.attack=="left") || (curFloorInfo.U==2 && this.attack=="right")){
@@ -331,6 +326,8 @@ var Tower={
           console.log("被杀死")
           this.Game.gameoverStatus=2;
           this.Game.trigger("over")
+          console.dir(sound)
+          sound.playGameOver();
           U.attr("direction","");
         }
       }
@@ -403,6 +400,8 @@ var sound={
   attack_sound2:document.getElementById("attack_sound2"),
   attack_sound3:document.getElementById("attack_sound3"),
   attack_sound4:document.getElementById("attack_sound4"),
+  gift:document.getElementById("gift"),
+  gameover:document.getElementById("gameover"),
   index:1,
   timmer:null,
   play:function(){
@@ -416,6 +415,14 @@ var sound={
     this.timmer=setTimeout(function(){
       self.index=1;
     },400)
+  },
+  playGift:function(){
+    this.gift.currentTime = 0;
+    this.gift.play();
+  },
+  playGameOver:function(){
+    this.gameover.currentTime = 0;
+    this.gameover.play();
   }
 }
 
@@ -698,7 +705,13 @@ $(".d_zwyc").bind("touchstart",function(){
   $(".dialog").addClass("hide");
   Game.replay();
 })
+$(".game-guide").bind("touchstart",function(){
+  $(this).remove();
+})
 
+$(".role-loading").bind("touchstart",function(){
+  $(this).remove();
+})
 
 
 

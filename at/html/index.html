@@ -9,22 +9,24 @@
     <meta name="description" content="">
     <meta name="keywords" content="">
     <title>奥特曼打小怪兽</title>
-    <link rel="stylesheet" href="../css/index.css">
   </head>
   <body ontouchstart="">
     <div class="loading hide">
       <div class="skip">跳过</div>
       <div id="loading_video"></div>
     </div>
+    <!--css在这个文件后加载-->
     <script src="../js/rem.min.js"></script>
+    <link rel="stylesheet" href="../css/index.css">
     <!--预加载的音乐资源-->
     <div class="pre_load">
       <audio src="../img/sound/attack_sound1.mp3" id="attack_sound1"></audio>
       <audio src="../img/sound/attack_sound2.mp3" id="attack_sound2"></audio>
       <audio src="../img/sound/attack_sound3.mp3" id="attack_sound3"></audio>
       <audio src="../img/sound/attack_sound4.mp3" id="attack_sound4"></audio>
+      <audio src="../img/sound/gift.mp3" id="gift"></audio>
+      <audio src="../img/sound/gameover.mp3" id="gameover"></audio>
     </div>
-    <!--指引页-->
     <!--故事页-->
     <div class="page p-story hide">
       <header>
@@ -96,6 +98,23 @@
     </div>
     <!--游戏页-->
     <div id="p_game" class="page p-game">
+      <!--指引页-->
+      <div class="dialog game-guide">
+        <div class="mask"></div>
+        <div class="content">
+          <!--角色 loading-->
+          <div class="body">
+            <div class="sjt"></div>
+            <div class="azy"></div>
+          </div>
+        </div>
+      </div>
+      <div class="dialog role-loading">
+        <div class="mask"></div>
+        <div class="content">
+          <div class="loading-role"></div>
+        </div>
+      </div>
       <!--进度-->
       <div class="progresswrap">
         <div style="-webkig-transform:scale(0,1)" id="timeHourglass" class="progress"></div>
