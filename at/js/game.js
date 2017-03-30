@@ -477,15 +477,15 @@ var Tower={
 var sound={
   attack_sound1:document.getElementById("attack_sound1"),
   attack_sound2:document.getElementById("attack_sound2"),
-  // attack_sound3:document.getElementById("attack_sound3"),
-  // attack_sound4:document.getElementById("attack_sound4"),
+  attack_sound3:document.getElementById("attack_sound3"),
+  attack_sound4:document.getElementById("attack_sound4"),
   gift:document.getElementById("gift"),
   gameover:document.getElementById("gameover"),
   index:1,
   timmer:null,
   play:function(){
     var self=this;
-    this.index= this.index>2? 1 :this.index;
+    this.index= this.index>4? 1 :this.index;
     //播放
     this["attack_sound"+this.index].currentTime = 0;
     this["attack_sound"+this.index].play();
