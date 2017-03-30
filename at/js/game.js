@@ -90,15 +90,15 @@ function bombFrame(obj){
     playFrame:function(){
       //console.dir(this.frameAnimationGroups)
       if(this.frameAnimationGroups.length==2){
-        this.ctx.globalAlpha=.95;
+        //this.ctx.globalAlpha=.95;
       }else if(this.frameAnimationGroups.length==3){
-        this.ctx.globalAlpha=.9;
+        //this.ctx.globalAlpha=.9;
       }else if(this.frameAnimationGroups.length==4){
-        this.ctx.globalAlpha=.85;
+        //this.ctx.globalAlpha=.85;
       }else if(this.frameAnimationGroups.length==5){
-        this.ctx.globalAlpha=.8;
+        //this.ctx.globalAlpha=.8;
       }else{
-        this.ctx.globalAlpha=1;
+        //this.ctx.globalAlpha=1;
       }
       this.ctx.clearRect(0,0,this.ctxW,this.ctxH);
       for(var i=0;i<this.frameAnimationGroups.length;i++){
@@ -133,13 +133,13 @@ function bombFrame(obj){
         return;
       }
       this.timmer=setInterval(function(){
-         self.playFrame();
+        self.playFrame();
         if(self.frameAnimationGroups.length==0){
           clearInterval(self.timmer);
           self.timmer=null;
           return;
         }
-      },100)
+      },60)
     }
   }
   //返回一个操作柄
@@ -587,8 +587,8 @@ Monster.prototype={
     this.monster._animationState.clearTracks();
     this.monster._animationState.addAnimation(0,"attack",false); 
     this.monster.renderAnimation(this.monster._skeleton,this.position[this.direction]);
+    sound.play();
     setTimeout(function(){
-      sound.play();
       Tower.nextFloor();
     },100)
     return this;
