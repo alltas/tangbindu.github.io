@@ -521,7 +521,7 @@ var sound={
     this.timmer && clearTimeout(this.timmer);
     this.timmer=setTimeout(function(){
       self.index=1;
-    },100)
+    },400)
   },
   playGift:function(){
     this.gift.currentTime = 0;
