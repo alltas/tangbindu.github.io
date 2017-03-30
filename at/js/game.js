@@ -521,7 +521,7 @@ var sound={
     this.timmer && clearTimeout(this.timmer);
     this.timmer=setTimeout(function(){
       self.index=1;
-    },400)
+    },100)
   },
   playGift:function(){
     this.gift.currentTime = 0;
@@ -590,7 +590,7 @@ Monster.prototype={
     setTimeout(function(){
       sound.play();
       Tower.nextFloor();
-    },200)
+    },100)
     return this;
   },
   //死亡
