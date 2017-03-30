@@ -199,8 +199,8 @@ var Tower={
       //地图,层类型，礼物类型，奥特曼类型 F(层)G(礼物)U(奥特曼)number(类型)number(方向，1左边，2右)
       {F:1},{F:2},{F:1,U:1},{F:2},{F:1,U:1},{F:2,G:2},{F:1,U:1},{F:2},{F:1},{F:2},
       {F:1,U:1},{F:2},{F:1,U:2},{F:2},{F:1,U:2},{F:2},{F:1},{F:2,U:1},{F:1},{F:2,U:1},
-      {F:1},{F:2,U:2},{F:1},{F:2,U:2},{F:1,U:1},{F:2},{F:1},{F:2,U:1},{F:1,U:2},{F:2},
-      {F:1},{F:2,U:1},{F:1},{F:2,U:2},{F:1},{F:2,U:1},{F:1},{F:2,U:1},{F:1,U:2},{F:2},
+      {F:1},{F:2,U:2},{F:1},{F:2,U:2},{F:1},{F:2},{F:1},{F:2,U:1},{F:1},{F:2},
+      {F:1},{F:2,U:1},{F:1},{F:2,U:2},{F:1},{F:2,U:1},{F:1},{F:2,U:1},{F:1},{F:2},
       {F:1},{F:2},{F:1},{F:2,U:1},{F:1,G:2},{F:2},{F:1,U:2},{F:2},{F:1},{F:2,U:1},
       {F:1},{F:2,U:2},{F:1},{F:2},{F:1,U:2},{F:2,U:1},{F:1},{F:2},{F:1,U:2},{F:2},
       {F:1},{F:2},{F:1,U:1},{F:2},{F:1,U:2},{F:2},{F:1,U:1},{F:2},{F:1},{F:2},
@@ -570,8 +570,7 @@ function Monster(option){
       timer && clearTimeout(timer);
       timer=setTimeout(function(){
         self.stand(self.direction)
-      },100);
-
+      },400);
     })
     window.monster=this.monster;
     //站位，计算位置
@@ -791,7 +790,7 @@ Game.init();
 
 
 
-Game.play("Boy_NewAlienBaltan");
+Game.play("Boy_DaDa");
 // setTimeout(function(){
 //   Game.play("Boy_DaDa");
 // },5000)
