@@ -1,7 +1,6 @@
 //沙漏计时器
 var TimeHourglass={
   timeNode:timeHourglass,//沙漏进度
-  intervalTimer:true,
   playTime:null,
   allTime:null,
   game:null,
@@ -9,9 +8,9 @@ var TimeHourglass={
   timeLapse:function(){
     var self=this;
     //定时器
-    this.intervalTimer=setInterval(function(){
+    requestAnimFrame(function(){
       if(self.status){
-        self.playTime-=120;
+        self.playTime-=1000/50;
         if(self.playTime<0){
           //挑战成功0，正常死亡1，被奥特曼杀死2
           this.Game.gameoverStatus=1;
@@ -23,7 +22,7 @@ var TimeHourglass={
         }
         self.timeNode.style["-webkit-transform"]="scale3d("+self.playTime/self.allTime+",1,1)";
       }
-    },120)
+    })
   },
   //添加时间
   addTime:function(){
@@ -88,17 +87,18 @@ function bombFrame(obj){
       this.frameAnimationGroups.unshift(oneFramesAnimation);
     },
     playFrame:function(){
+      console.log(1)
       //console.dir(this.frameAnimationGroups)
       if(this.frameAnimationGroups.length==2){
-        //this.ctx.globalAlpha=.95;
+        this.ctx.globalAlpha=.95;
       }else if(this.frameAnimationGroups.length==3){
-        //this.ctx.globalAlpha=.9;
+        this.ctx.globalAlpha=.9;
       }else if(this.frameAnimationGroups.length==4){
-        //this.ctx.globalAlpha=.85;
+        this.ctx.globalAlpha=.85;
       }else if(this.frameAnimationGroups.length==5){
-        //this.ctx.globalAlpha=.8;
+        this.ctx.globalAlpha=.8;
       }else{
-        //this.ctx.globalAlpha=1;
+        this.ctx.globalAlpha=1;
       }
       this.ctx.clearRect(0,0,this.ctxW,this.ctxH);
       for(var i=0;i<this.frameAnimationGroups.length;i++){
@@ -128,18 +128,20 @@ function bombFrame(obj){
     play:function(){
       this.insetOneFramesAnimation();
       var self=this;
-      //console.dir(this.timmer)
-      if(this.timmer){
-        return;
-      }
-      this.timmer=setInterval(function(){
-        self.playFrame();
-        if(self.frameAnimationGroups.length==0){
-          clearInterval(self.timmer);
-          self.timmer=null;
-          return;
+      if(this.timmer){return;}
+      var i=0;
+      self.timmer=requestAnimFrame(function(){
+        if(i++%6==0){
+          self.playFrame();
+          if(self.frameAnimationGroups.length==0){
+            cancelRequestAnimFrame(self.timmer);
+            self.timmer=null;
+            i=0;
+            return;
+          }
         }
-      },60)
+        self.timmer=requestAnimFrame(arguments.callee);
+      })
     }
   }
   //返回一个操作柄
@@ -251,7 +253,7 @@ var Tower={
       {F:1},{F:2},{F:1,U:1},{F:2},{F:1,U:1},{F:2,G:2},{F:1},{F:2,U:2},{F:1},{F:2},
       {F:1,U:1},{F:2},{F:1,U:2},{F:2},{F:1,G:2},{F:2},{F:1},{F:2,U:1},{F:1},{F:2,U:1},
       {F:1},{F:2,U:2},{F:1,U:2},{F:2},{F:1,U:1},{F:2},{F:1,U:1},{F:2},{F:1,U:2},{F:2},
-      {F:1},{F:2,U:1},{F:1},{F:2,U:2},{F:1},{F:2,U:1},{F:1},{F:2},{F:1,U:2},{F:3},
+      {F:1},{F:2,U:1},{F:1},{F:2,U:2},{F:1},{F:2,U:1},{F:1},{F:2},{F:1,U:2},{F:2},
       {F:1},{F:2},{F:1,U:2},{F:2},{F:1,U:1},{F:2},{F:1,U:2},{F:2},{F:1},{F:2},
       {F:1,U:1},{F:2},{F:1,U:2},{F:2},{F:1,U:2},{F:2},{F:1},{F:2,U:1},{F:1},{F:2},
       {F:1},{F:2},{F:1,U:2},{F:2},{F:1,U:2},{F:2},{F:1},{F:2,U:1},{F:1},{F:2,U:1},
