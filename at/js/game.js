@@ -703,11 +703,16 @@ Game={
       cancelRequestAnimFrame(this.monster.monster.timmer);
       this.monster.monster=null;
     }
-    this.monster=new Monster({name:this.monsterName,stage:this.monsterStage});
-    this.monster.handler("ready",function(){
-      self.interactive.monster=self.monster;
-      self.hourglassTime=self.monsterTime[monsterName];
-      self.TimeHourglass.reset();
+    this.monsterStage.width="0px";
+    this.monsterStage.height="0px";
+    var self=this;
+    requestAnimFrame(function(){
+      self.monster=new Monster({name:self.monsterName,stage:self.monsterStage});
+      self.monster.handler("ready",function(){
+        self.interactive.monster=self.monster;
+        self.hourglassTime=self.monsterTime[monsterName];
+        self.TimeHourglass.reset();
+      })
     })
   },
   handler:function(type, handler) {
