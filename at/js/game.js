@@ -729,7 +729,7 @@ Game.init();
 
 
 
-Game.play("Boy_Miklas");
+Game.play("Boy_Gomola");
 // setTimeout(function(){
 //   Game.play("Boy_DaDa");
 // },5000)
