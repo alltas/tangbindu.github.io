@@ -87,7 +87,6 @@ function bombFrame(obj){
       this.frameAnimationGroups.unshift(oneFramesAnimation);
     },
     playFrame:function(){
-      console.log(1)
       //console.dir(this.frameAnimationGroups)
       if(this.frameAnimationGroups.length==2){
         this.ctx.globalAlpha=.95;
@@ -131,7 +130,7 @@ function bombFrame(obj){
       if(this.timmer){return;}
       var i=0;
       self.timmer=requestAnimFrame(function(){
-        if(i++%6==0){
+        if(i++%2==0){
           self.playFrame();
           if(self.frameAnimationGroups.length==0){
             cancelRequestAnimFrame(self.timmer);
