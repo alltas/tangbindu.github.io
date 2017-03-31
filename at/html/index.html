@@ -11,10 +11,10 @@
     <title>奥特曼打小怪兽</title>
   </head>
   <body ontouchstart="">
-    <div class="loading hide">
-      <div class="skip">跳过</div>
-      <div id="loading_video"></div>
-    </div>
+    <!--.loading
+    .skip 跳过
+    #loading_video
+    -->
     <!--css在这个文件后加载-->
     <script src="../js/rem.min.js"></script>
     <link rel="stylesheet" href="../css/index.css">
@@ -103,7 +103,7 @@
     <!--游戏页-->
     <div id="p_game" class="page p-game">
       <!--指引页-->
-      <div class="dialog game-guide">
+      <div class="dialog game-guide hide">
         <div class="mask"></div>
         <div class="content">
           <!--角色 loading-->
@@ -113,7 +113,7 @@
           </div>
         </div>
       </div>
-      <div class="dialog role-loading">
+      <div class="dialog role-loading hide">
         <div class="mask"></div>
         <div class="content">
           <div class="loading-role"></div>
