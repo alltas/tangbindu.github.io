@@ -790,5 +790,9 @@ $(".role-loading").bind("touchstart",function(){
   $(this).remove();
 })
 
+$(".skip").bind("touchstart",function(){
+  $(this).parent().remove();
+})
+
 
 
