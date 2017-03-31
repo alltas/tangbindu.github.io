@@ -1,0 +1,153 @@
+
+Boy_Miklas.png
+size: 1024,256
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Eye_Basicclose_00
+  rotate: false
+  xy: 909, 182
+  size: 91, 26
+  orig: 91, 26
+  offset: 0, 0
+  index: -1
+Eye_Basicdoubt_00
+  rotate: false
+  xy: 817, 210
+  size: 91, 40
+  orig: 91, 40
+  offset: 0, 0
+  index: -1
+Eye_Basicopen_00
+  rotate: false
+  xy: 910, 210
+  size: 91, 40
+  orig: 91, 40
+  offset: 0, 0
+  index: -1
+Eye_Basicwink_00
+  rotate: false
+  xy: 721, 212
+  size: 94, 38
+  orig: 94, 38
+  offset: 0, 0
+  index: -1
+Eye_faint_00
+  rotate: false
+  xy: 816, 168
+  size: 91, 40
+  orig: 91, 40
+  offset: 0, 0
+  index: -1
+Faint00
+  rotate: false
+  xy: 552, 181
+  size: 167, 69
+  orig: 167, 69
+  offset: 0, 0
+  index: -1
+Faint01
+  rotate: false
+  xy: 371, 180
+  size: 179, 70
+  orig: 179, 70
+  offset: 0, 0
+  index: -1
+Faint02
+  rotate: false
+  xy: 371, 108
+  size: 179, 70
+  orig: 179, 70
+  offset: 0, 0
+  index: -1
+Forearm_Left
+  rotate: false
+  xy: 251, 12
+  size: 54, 90
+  orig: 54, 90
+  offset: 0, 0
+  index: -1
+Forearm_Right
+  rotate: false
+  xy: 707, 2
+  size: 42, 89
+  orig: 42, 89
+  offset: 0, 0
+  index: -1
+Head
+  rotate: false
+  xy: 2, 9
+  size: 247, 241
+  orig: 247, 241
+  offset: 0, 0
+  index: -1
+Mouth_basic_00
+  rotate: false
+  xy: 721, 175
+  size: 93, 35
+  orig: 93, 35
+  offset: 0, 0
+  index: -1
+Mouth_basic_01
+  rotate: false
+  xy: 371, 73
+  size: 75, 33
+  orig: 75, 33
+  offset: 0, 0
+  index: -1
+Mouth_basic_02
+  rotate: false
+  xy: 909, 150
+  size: 79, 30
+  orig: 79, 30
+  offset: 0, 0
+  index: -1
+Pants_Left
+  rotate: false
+  xy: 552, 10
+  size: 78, 169
+  orig: 78, 169
+  offset: 0, 0
+  index: -1
+Pants_Right
+  rotate: false
+  xy: 632, 8
+  size: 73, 171
+  orig: 73, 171
+  offset: 0, 0
+  index: -1
+Tops
+  rotate: false
+  xy: 251, 104
+  size: 118, 146
+  orig: 118, 146
+  offset: 0, 0
+  index: -1
+Upperarm_Left
+  rotate: false
+  xy: 307, 18
+  size: 59, 84
+  orig: 59, 84
+  offset: 0, 0
+  index: -1
+Upperarm_Right
+  rotate: false
+  xy: 707, 93
+  size: 52, 80
+  orig: 52, 80
+  offset: 0, 0
+  index: -1
+eye00
+  rotate: false
+  xy: 761, 149
+  size: 29, 24
+  orig: 29, 24
+  offset: 0, 0
+  index: -1
+eye01
+  rotate: false
+  xy: 792, 149
+  size: 22, 24
+  orig: 22, 24
+  offset: 0, 0
+  index: -1
