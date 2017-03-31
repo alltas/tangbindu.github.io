@@ -1,6 +1,7 @@
 //沙漏计时器
 var TimeHourglass={
   timeNode:timeHourglass,//沙漏进度
+  intervalTimer:true,
   playTime:null,
   allTime:null,
   game:null,
@@ -8,9 +9,9 @@ var TimeHourglass={
   timeLapse:function(){
     var self=this;
     //定时器
-    requestAnimFrame(function(){
+    this.intervalTimer=setInterval(function(){
       if(self.status){
-        self.playTime-=1000/50;
+        self.playTime-=120;
         if(self.playTime<0){
           //挑战成功0，正常死亡1，被奥特曼杀死2
           this.Game.gameoverStatus=1;
@@ -22,7 +23,7 @@ var TimeHourglass={
         }
         self.timeNode.style["-webkit-transform"]="scale3d("+self.playTime/self.allTime+",1,1)";
       }
-    })
+    },120)
   },
   //添加时间
   addTime:function(){
@@ -47,7 +48,6 @@ var TimeHourglass={
     this.timeLapse()
   }
 }
-
 
 
 function bombFrame(obj){
@@ -130,7 +130,7 @@ function bombFrame(obj){
       if(this.timmer){return;}
       var i=0;
       self.timmer=requestAnimFrame(function(){
-        if(i++%2==0){
+        if(i++%3==0){
           self.playFrame();
           if(self.frameAnimationGroups.length==0){
             cancelRequestAnimFrame(self.timmer);
@@ -143,6 +143,8 @@ function bombFrame(obj){
       })
     }
   }
+
+
   //返回一个操作柄
   var canvas=document.getElementById("tower_break_canvas");
   canvas.width=600;
@@ -729,7 +731,7 @@ Game.init();
 
 
 
-Game.play("Boy_Gomola");
+Game.play("Boy_Miklas");
 // setTimeout(function(){
 //   Game.play("Boy_DaDa");
 // },5000)
