@@ -745,9 +745,9 @@ Game.init();
 
 
 
-window.onload=function(){
-  if(emoji_video.clientHeight>document.body.clientHeight){emoji_video.style.marginTop=-(emoji_video.clientHeight-document.body.clientHeight)/2+"px"}
-}
+// window.onload=function(){
+//   if(emoji_video.clientHeight>document.body.clientHeight){emoji_video.style.marginTop=-(emoji_video.clientHeight-document.body.clientHeight)/2+"px"}
+// }
 
 //   Game.play("Boy_Miklas");
 // setTimeout(function(){
