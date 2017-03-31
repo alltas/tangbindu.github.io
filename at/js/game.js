@@ -50,6 +50,7 @@ var TimeHourglass={
 }
 
 
+
 function bombFrame(obj){
   //帧动画
   function FrameAnimation(param){
@@ -127,24 +128,20 @@ function bombFrame(obj){
     play:function(){
       this.insetOneFramesAnimation();
       var self=this;
-      if(this.timmer){return;}
-      var i=0;
-      self.timmer=requestAnimFrame(function(){
-        if(i++%3==0){
-          self.playFrame();
-          if(self.frameAnimationGroups.length==0){
-            cancelRequestAnimFrame(self.timmer);
-            self.timmer=null;
-            i=0;
-            return;
-          }
+      //console.dir(this.timmer)
+      if(this.timmer){
+        return;
+      }
+      this.timmer=setInterval(function(){
+        self.playFrame();
+        if(self.frameAnimationGroups.length==0){
+          clearInterval(self.timmer);
+          self.timmer=null;
+          return;
         }
-        self.timmer=requestAnimFrame(arguments.callee);
-      })
+      },80)
     }
   }
-
-
   //返回一个操作柄
   var canvas=document.getElementById("tower_break_canvas");
   canvas.width=600;
