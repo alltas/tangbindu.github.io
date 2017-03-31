@@ -731,7 +731,7 @@ Game.init();
 
 
 
-Game.play("Boy_NewAlienBaltan");
+Game.play("Boy_DaDa");
 // setTimeout(function(){
 //   Game.play("Boy_DaDa");
 // },5000)
