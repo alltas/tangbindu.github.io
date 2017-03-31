@@ -1,13 +1,16 @@
 //沙漏计时器
 var TimeHourglass={
   timeNode:timeHourglass,//沙漏进度
-  intervalTimer:true,
+  intervalTimer:false,
   playTime:null,
   allTime:null,
   game:null,
   status:false,
   timeLapse:function(){
     var self=this;
+    if(this.intervalTimer){
+      return false;
+    }
     //定时器
     this.intervalTimer=setInterval(function(){
       if(self.status){
@@ -696,23 +699,19 @@ Game={
     var self=this;
     //console.dir()
     //初始化怪兽角色
-    if(this.monster){ 
-      this.monster.handlers=[];
-      this.monster.monster._animationState.sracks=[];
-      console.log(this.monster.monster.timmer)
-      cancelRequestAnimFrame(this.monster.monster.timmer);
-      this.monster.monster=null;
-    }
-    this.monsterStage.width="0px";
-    this.monsterStage.height="0px";
-    var self=this;
-    requestAnimFrame(function(){
+     if(this.monster){ 
+       this.monster.handlers=[];
+       this.monster.monster.handlers=[];
+       this.monster.monster._animationState.sracks=[];
+       cancelRequestAnimFrame(this.monster.monster.timmer);
+       this.monster.monster=null;
+       this.interactive.monster=null;
+     }
       self.monster=new Monster({name:self.monsterName,stage:self.monsterStage});
       self.monster.handler("ready",function(){
-        self.interactive.monster=self.monster;
-        self.hourglassTime=self.monsterTime[monsterName];
-        self.TimeHourglass.reset();
-      })
+      self.interactive.monster=self.monster;
+      self.hourglassTime=self.monsterTime[monsterName];
+      self.TimeHourglass.reset();
     })
   },
   handler:function(type, handler) {
