@@ -694,7 +694,15 @@ Game={
     //初始化shalou
     this.TimeHourglass.init(this.monsterTime[monsterName],this);
     var self=this;
+    //console.dir()
     //初始化怪兽角色
+    if(this.monster){ 
+      this.monster.handlers=[];
+      this.monster.monster._animationState.sracks=[];
+      console.log(this.monster.monster.timmer)
+      cancelRequestAnimFrame(this.monster.monster.timmer);
+      this.monster.monster=null;
+    }
     this.monster=new Monster({name:this.monsterName,stage:this.monsterStage});
     this.monster.handler("ready",function(){
       self.interactive.monster=self.monster;
@@ -732,9 +740,9 @@ Game.init();
 
 
 
-window.onload=function(){
-  if(emoji_video.clientHeight>document.body.clientHeight){emoji_video.style.marginTop=-(emoji_video.clientHeight-document.body.clientHeight)/2+"px"}
-}
+// window.onload=function(){
+//   if(emoji_video.clientHeight>document.body.clientHeight){emoji_video.style.marginTop=-(emoji_video.clientHeight-document.body.clientHeight)/2+"px"}
+// }
 
 //   Game.play("Boy_Miklas");
 // setTimeout(function(){
@@ -745,16 +753,16 @@ window.onload=function(){
 
 
 Game.play("Boy_Miklas");
-// setTimeout(function(){
-//   Game.play("Boy_DaDa");
-// },5000)
-// setTimeout(function(){
-//   Game.play("Boy_Miklas");
-// },10000)
-// setTimeout(function(){
-//   Game.play("Boy_NewAlienBaltan");
-// },15000)
+setTimeout(function(){
+  Game.play("Boy_DaDa");
+},5000)
+setTimeout(function(){
+  Game.play("Boy_NewAlienBaltan");
+},10000)
 
+setTimeout(function(){
+  Game.play("Boy_Gomola");
+},16000)
 
 
 Game.handler("over",function(){
