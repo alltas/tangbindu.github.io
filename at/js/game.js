@@ -493,6 +493,7 @@ function Monster(option){
   this.monster=null;
   this.position={};//站位
   this.direction="right";
+  this.timmer;
   //骨骼动画资源
   this.name=option.name;
   //骨骼动画舞台
@@ -518,10 +519,10 @@ function Monster(option){
       self.trigger("ready");
       self.stand("right");
     });
-    var timer=null;
+    var self=this;
     this.monster.handler("animationEnd",function(){
-      timer && clearTimeout(timer);
-      timer=setTimeout(function(){
+      self.timer && clearTimeout(self.timer);
+      self.timer=setTimeout(function(){
         self.stand(self.direction)
       },400);
     })
@@ -699,15 +700,16 @@ Game={
     var self=this;
     //console.dir()
     //初始化怪兽角色
-     if(this.monster){ 
-       this.monster.handlers=[];
-       this.monster.monster.handlers=[];
-       this.monster.monster._animationState.sracks=[];
-       cancelRequestAnimFrame(this.monster.monster.timmer);
-       this.monster.monster=null;
-       this.interactive.monster=null;
-     }
-      self.monster=new Monster({name:self.monsterName,stage:self.monsterStage});
+   if(this.monster){ 
+     this.monster.handlers=[];
+     this.monster.timmer && clearTimeout(function(){this.monster.monster.timmer})
+     this.monster.monster.handlers=[];
+     this.monster.monster._animationState.sracks=[];
+     cancelRequestAnimFrame(this.monster.monster.timmer);
+     this.monster.monster=null;
+     this.interactive.monster=null;
+   }
+    self.monster=new Monster({name:self.monsterName,stage:self.monsterStage});
       self.monster.handler("ready",function(){
       self.interactive.monster=self.monster;
       self.hourglassTime=self.monsterTime[monsterName];
