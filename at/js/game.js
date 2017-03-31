@@ -501,18 +501,18 @@ function Monster(option){
   this.init=(function(){
     var self=this;
     this.position.right={
-      x:self.stage.clientWidth*devicePixelRatio*.8,
-      y:self.stage.clientWidth*devicePixelRatio*.24
+      x:0,//self.stage.clientWidth*devicePixelRatio*.8,
+      y:0,//self.stage.clientWidth*devicePixelRatio*.24
     }
     this.position.left={
-      x:self.stage.clientWidth*devicePixelRatio*.2,
-      y:self.stage.clientWidth*devicePixelRatio*.24
+      x:0,//self.stage.clientWidth*devicePixelRatio*.2,
+      y:0,//self.stage.clientWidth*devicePixelRatio*.24
     }
     this.monster=new SpinePlus(this.stage,{
       atlas:"../img/bone-skin/"+this.name+"/"+this.name+".atlas",
       json:"../img/bone-skin/"+this.name+"/"+this.name+".json",
       png:"../img/bone-skin/"+this.name+"/"+this.name+".png",
-      scale:this.stage.clientWidth*devicePixelRatio*0.2/280
+      scale:1//this.stage.clientWidth*devicePixelRatio*0.2/280
     });
     //初始化站立在左边
     this.monster.handler("ready",function(){
