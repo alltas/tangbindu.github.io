@@ -90,11 +90,11 @@ p{
 }
 
 
-@for $i from 0 through 19{
-  section:nth-child(#{$i}){
-    display: none;
-  } 
-}
+// @for $i from 0 through 19{
+//   section:nth-child(#{$i}){
+//     display: none;
+//   } 
+// }
 
 
 
