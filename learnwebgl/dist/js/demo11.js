@@ -1,6 +1,5 @@
 //o11平移三角形
 var demo11=function(){
-  return false;
   var gl=initwebgl(demo11_canvas);
   //-------private-------
   //顶点着色器
@@ -29,7 +28,9 @@ var demo11=function(){
   var translate=gl.getUniformLocation(gl.program,"translate");
   //制作顶点数据
   var vertices = new Float32Array([
-    -.8, -.8, -0.8, 0.8, -0.74, -0
+    -.8, -.8, 
+    -0.8, 0.8, 
+    -0.74, -0
   ]);
   // 创建一个缓存区存放顶点数据  
   var vertexBuffer = gl.createBuffer();
@@ -41,14 +42,11 @@ var demo11=function(){
   gl.vertexAttribPointer(position, 2, gl.FLOAT, false, 0, 0);
   // 启用变量
   gl.enableVertexAttribArray(position);
-  //统一绘制
-  var i=0;
-  var timer=setInterval(function(){
-    if(i++>300){clearInterval(timer)};
-    gl.uniform4f(translate,i/200,0.0,0.0,0.0);
-    gl.clear(gl.COLOR_BUFFER_BIT);
-    gl.drawArrays(gl.TRIANGLES , 0, vertices.length/2);
-  },1000/60)
+  gl.clear(gl.COLOR_BUFFER_BIT);
+  //改变位置
+  gl.drawArrays(gl.TRIANGLES , 0, vertices.length/2);
+  gl.uniform4f(translate,1.3,0.0,0.0,0.0);
+  gl.drawArrays(gl.TRIANGLES , 0, vertices.length/2);
 }()
 
 

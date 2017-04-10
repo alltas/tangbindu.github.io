@@ -13,7 +13,7 @@ var demo4=function(){
     //顶点着色器
     var VSHADER_SOURCE = [
         'void main() {',
-        '  gl_Position = vec4('+points[i]+', '+points[++i]+', 0.0, 1.0);', //Set the vertex coordinates of the point
+        '  gl_Position = vec4('+points[i]+', '+points[++i]+', 0, 1);', //Set the vertex coordinates of the point
         '  gl_PointSize = 40.0;',                    //Set the point size
         '}'
       ].join("\n");
