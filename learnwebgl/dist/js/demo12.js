@@ -53,8 +53,4 @@ var demo12=function(){
   //gl.clear(gl.COLOR_BUFFER_BIT);
   gl.drawArrays(gl.TRIANGLES , 0, vertices.length/2);
 }()
-//有bug
-
-
-
 

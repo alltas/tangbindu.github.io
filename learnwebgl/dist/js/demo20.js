@@ -80,11 +80,3 @@ var demo20=function(){
   }
 }()
 //总结
-//LINES(default) LINE_STRIP LINE_LOOP TRIANGLES TRIANGLE_STRIP TRIANGLE_FAN
-//基本元素都是矢量坐标点，传参不一样画图方式不一样（支持点，线，三角形）
-//LINES 普通的坐标点
-//LINE_STRIP 连线
-//LINE_LOOP 回路
-//TRIANGLES 三角形
-//TRIANGLE_STRIP 共享一条边
-//TRIANGLE_FAN 共享一个顶点

@@ -1,5 +1,6 @@
 //o13旋转三角形（矩阵旋转45度）
 var demo13=function(){
+  demo13_canvas.style.height=demo13_canvas.clientWidth+"px";
   var gl=initwebgl(demo13_canvas);
   //-------private-------
   //顶点着色器
@@ -60,9 +61,6 @@ var demo13=function(){
   rotate(0);
   rotate(90);
 }()
-//有bug
-
-
 
 
 

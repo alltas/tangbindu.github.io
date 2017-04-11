@@ -16,6 +16,7 @@ function initwebgl(canvas){
 }
 
 function initShaders(gl, VSHADER_SOURCE, FSHADER_SOURCE){
+  //console.log(gl)
   /**
    * Create 着色器对象
    * @param gl webgl
@@ -51,10 +52,10 @@ function initShaders(gl, VSHADER_SOURCE, FSHADER_SOURCE){
     var linked = gl.getProgramParameter(program, gl.LINK_STATUS);
     if (!linked) {
       var error = gl.getProgramInfoLog(program);
-      //console.log('程序连接失败: ' + error);
-      // gl.deleteProgram(program);
-      // gl.deleteShader(vshader);
-      // gl.deleteShader(fshader);
+      console.log('程序连接失败: ' + error);
+      gl.deleteProgram(program);
+      gl.deleteShader(vshader);
+      gl.deleteShader(fshader);
       return null;
     }
     return program;
