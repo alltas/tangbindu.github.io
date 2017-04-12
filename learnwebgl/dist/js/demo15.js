@@ -1,6 +1,7 @@
 //o15顶点色彩
 var demo15=function(){
   var gl=initwebgl(demo15_canvas);
+  var scale=gl.canvas.clientWidth/gl.canvas.clientHeight;
   //-------private-------
   //顶点着色器
   var VSHADER_SOURCE = [
@@ -28,9 +29,9 @@ var demo15=function(){
   var a_color =gl.getAttribLocation(gl.program, 'a_color');
   //制作顶点数据
   var verticesandcolors = new Float32Array([
-    -0.1,-0.5,0.0,1.0,0.0, 
-    0.0,0.5,1.0,1.0,1.0,
-    0.1,-0.5,1.0,.2,1.0
+    -0.5/scale,-0.5,0.0,1.0,0.0, 
+     0.0/scale, 0.5,1.0,1.0,1.0,
+     0.5/scale,-0.5,1.0,0.2,1.0
   ]);
   // 创建一个缓存区存放顶点数据  
   var vertexBuffer = gl.createBuffer();
@@ -39,6 +40,7 @@ var demo15=function(){
 　// 在webgl的缓存区写入顶点数据
   gl.bufferData(gl.ARRAY_BUFFER, verticesandcolors, gl.STATIC_DRAW);
   var size=verticesandcolors.BYTES_PER_ELEMENT;
+  //BYTES_PER_ELEMENT强类型数组元素的使用的字节数
   // 把写入的数据传给变量position
   gl.vertexAttribPointer(position, 2, gl.FLOAT, false, size*5, 0);
   // 启用变量

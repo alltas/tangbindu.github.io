@@ -1,48 +1,44 @@
 //o20绘制3d开通星空
 var demo20=function(){
   var gl=initwebgl(demo20_canvas);
-  // Vertex shader program
-  var VSHADER_SOURCE =
-    'attribute vec4 a_Position;\n' +
-    'attribute vec2 a_TexCoord;\n' +
-    'varying vec2 v_TexCoord;\n' +
-    'void main() {\n' +
-    '  gl_Position = a_Position;\n' +
-    '  v_TexCoord = a_TexCoord;\n' +
-    '}\n';
+  var scale=gl.canvas.clientWidth/gl.canvas.clientHeight;
+  var VSHADER_SOURCE =[
+    'attribute vec4 a_Position;',
+    'attribute vec2 a_TexCoord;',
+    'varying vec2 v_TexCoord;',
+    'void main() {',
+    '  gl_Position = a_Position;',
+    '  v_TexCoord = a_TexCoord;',
+    '}'].join("\n");
 
   // Fragment shader program
-  var FSHADER_SOURCE =
-    '#ifdef GL_ES\n' +
-    'precision mediump float;\n' +
-    '#endif\n' +
-    'uniform sampler2D u_Sampler;\n' +
-    'varying vec2 v_TexCoord;\n' +
-    'void main() {\n' +
-    '  gl_FragColor = texture2D(u_Sampler, v_TexCoord);\n' +
-    '}\n';
+  var FSHADER_SOURCE =[
+    'precision mediump float;',
+    'uniform sampler2D u_Sampler;',
+    'varying vec2 v_TexCoord;',
+    'void main() {',
+    '  gl_FragColor = texture2D(u_Sampler, v_TexCoord);',
+    '}'].join("\n");
 
-  function main() {
-    initShaders(gl, VSHADER_SOURCE, FSHADER_SOURCE);
+  initShaders(gl, VSHADER_SOURCE, FSHADER_SOURCE);
+  // Set vertex
+  var n = initVertexBuffers(gl);
+  // Set texture
+  initTextures(gl, n)
 
-    // Set vertex
-    var n = initVertexBuffers(gl);
-    // Set texture
-    initTextures(gl, n)
-  }
-  main();
   function initVertexBuffers(gl) {
     var verticesTexCoords = new Float32Array([
-      -0.5,  0.5,   0.0, 1.0,
-      -0.5, -0.5,   0.0, 0.0,
-       0.5,  0.5,   1.0, 1.0,
-       0.5, -0.5,   1.0, 0.0,
+      -0.5/scale,  0.5,   0.0, 1.0,
+      -0.5/scale, -0.5,   0.0, 0.0,
+       0.5/scale,  0.5,   1.0, 1.0,
+       0.5/scale, -0.5,   1.0, 0.0,
     ]);
     var n = 4; 
     var vertexTexCoordBuffer = gl.createBuffer();
     gl.bindBuffer(gl.ARRAY_BUFFER, vertexTexCoordBuffer);
     gl.bufferData(gl.ARRAY_BUFFER, verticesTexCoords, gl.STATIC_DRAW);
     var FSIZE = verticesTexCoords.BYTES_PER_ELEMENT;
+    console.dir(verticesTexCoords)
     var a_Position = gl.getAttribLocation(gl.program, 'a_Position');
     gl.vertexAttribPointer(a_Position, 2, gl.FLOAT, false, FSIZE * 4, 0);
     gl.enableVertexAttribArray(a_Position);  

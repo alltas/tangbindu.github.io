@@ -1,8 +1,7 @@
 //o14绘制一个圆
 var demo14=function(){
-  demo14_canvas.style.height=demo14_canvas.clientWidth+"px";
-  demo14_canvas.style.width=demo14_canvas.clientWidth+"px";
   var gl=initwebgl(demo14_canvas);
+  var scale=gl.canvas.clientWidth/gl.canvas.clientHeight;
   //顶点着色器代码
   var vertex_shader=[
     'attribute vec4 positon;',
@@ -22,9 +21,14 @@ var demo14=function(){
   initShaders(gl,vertex_shader,fragment_shader);
   //建立一个圆形顶点模型
   var vertices=[];
-  for(var i=0;i<=360;i+=1){
+  for(var i=0;i<=360;i+=20){
     var radian=(Math.PI/180)*i;
-    vertices.push(Math.cos(radian)*.5,Math.sin(radian)*.5,0.0,0.0);
+    vertices.push(
+      Math.cos(radian)*.5/scale,
+      Math.sin(radian)*.5,
+      0.0,
+      0.0
+    );
   }
   var vertexBuffer = gl.createBuffer();
   gl.bindBuffer(gl.ARRAY_BUFFER, vertexBuffer);

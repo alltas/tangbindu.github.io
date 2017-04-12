@@ -1,6 +1,7 @@
 //o12旋转三角形（三角函数旋转5度）
 var demo12=function(){
   var gl=initwebgl(demo12_canvas);
+  var scale=gl.canvas.clientWidth/gl.canvas.clientHeight;
   //-------private-------
   //顶点着色器
   var VSHADER_SOURCE = [
@@ -31,7 +32,9 @@ var demo12=function(){
   var cosBsinB=gl.getUniformLocation(gl.program,"cosBsinB");
   //制作顶点数据
   var vertices = new Float32Array([
-    -.8, -.8, -0.8, 0.8, -0.74, -0
+    -.5/scale , -0.5, 
+    -0.5/scale,  0.5, 
+    0.5/scale ,  0.0
   ]);
   // 创建一个缓存区存放顶点数据  
   var vertexBuffer = gl.createBuffer();

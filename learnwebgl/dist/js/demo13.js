@@ -1,7 +1,8 @@
 //o13旋转三角形（矩阵旋转45度）
 var demo13=function(){
-  demo13_canvas.style.height=demo13_canvas.clientWidth+"px";
+  //demo13_canvas.style.height=demo13_canvas.clientWidth+"px";
   var gl=initwebgl(demo13_canvas);
+  var scale=gl.canvas.clientWidth/gl.canvas.clientHeight;
   //-------private-------
   //顶点着色器
   var VSHADER_SOURCE = [
@@ -29,7 +30,9 @@ var demo13=function(){
   var cosBsinB=gl.getUniformLocation(gl.program,"cosBsinB");
   //制作顶点数据
   var vertices = new Float32Array([
-    -.8, -.8, -0.8, 0.8, -0.74, -0
+    -.8/scale, -.8, 
+    -0.8/scale, 0.8, 
+    -0.1/scale, -0
   ]);
   // 创建一个缓存区存放顶点数据  
   var vertexBuffer = gl.createBuffer();
@@ -49,8 +52,8 @@ var demo13=function(){
     var cosB = Math.cos(radian), sinB = Math.sin(radian);
     // Note: WebGL is column major order
     var xformMatrix = new Float32Array([
-       cosB, sinB, 0.0, 0.0,
-      -sinB, cosB, 0.0, 0.0,
+       cosB/scale, sinB, 0.0, 0.0,
+      -sinB/scale, cosB, 0.0, 0.0,
         0.0,  0.0, 1.0, 0.0,
         0.0,  0.0, 0.0, 1.0
     ]);
@@ -59,7 +62,7 @@ var demo13=function(){
     gl.drawArrays(gl.TRIANGLES , 0, vertices.length/2);
   }
   rotate(0);
-  rotate(90);
+  rotate(45);
 }()
 
 
