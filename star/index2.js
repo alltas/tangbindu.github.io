@@ -42,6 +42,7 @@ fireflygroup.prototype = {
           y: startY
         },
         opacity:Math.random(),
+        loopdir:1,
         homePosition : {
           x: startX,
           y: startY 
@@ -57,43 +58,46 @@ fireflygroup.prototype = {
     }
   },
   update:function(){
-    var damping = .84; 
-    var steering_randomness = 0.1;
-    var steering_force = 0.1;
-    var boundary_force = 0.4;
     for(var i = 0; i < this.particles.length; i++) {
       var p = this.particles[i];
-      p.direction += (Math.random() * 2 - 1) * steering_randomness;
+      p.direction += (Math.random() * 2 - 1) * 0.1;
       var steeringVector = this.getDirectionVector(p.direction);
-      p.velocity.x += steeringVector.x * steering_force;
-      p.velocity.y += steeringVector.y * steering_force;
-      var dist = this.distance(p.position.x, p.position.y, p.homePosition.x, p.homePosition.y);
+      p.velocity.x += steeringVector.x * 0.1;
+      p.velocity.y += steeringVector.y * 0.1;
+      var dist = this.distance(
+        p.position.x, 
+        p.position.y, 
+        p.homePosition.x, 
+        p.homePosition.y
+      );
       if(dist > 0) {
         var steerToHome = this.getVectorTowards(p.position, p.homePosition);
         dist = Math.min(p.wanderRadius, dist);
         dist = (dist / p.wanderRadius);
-        p.velocity.x += steerToHome.x * dist * boundary_force;
-        p.velocity.y += steerToHome.y * dist * boundary_force;
+        p.velocity.x += steerToHome.x * dist * 0.4;
+        p.velocity.y += steerToHome.y * dist * 0.4;
       }
-      p.velocity.x *= damping;
-      p.velocity.y *= damping;
+      p.velocity.x *= .84;
+      p.velocity.y *= .84;
       p.position.x += p.velocity.x;
       p.position.y += p.velocity.y;
     }
   },
   draw:function(){
-    var self=this;
     this.update();
+    this.deg++;
     for(var i = 0; i < this.particles.length; i++) {
       var p = this.particles[i];
-      if((this.deg++)%8==0 && p.size>window.devicePixelRatio*1.6){
-        p.opacity+=Math.sin(this.deg)*.15;
-        p.opacity=p.opacity>.8 ? .8 : p.opacity;
-        p.opacity=p.opacity<.5 ? .5 : p.opacity;
+      if(this.deg%6==1 && p.size>window.devicePixelRatio*1.6){
+        p.loopdir= p.opacity>=1 ? -1 : p.loopdir;
+        p.loopdir= p.opacity<=.4 ? 1 : p.loopdir;
+        p.opacity+=.1*p.loopdir;
+        p.opacity=p.opacity>1? 1: p.opacity;
+        p.opacity=p.opacity<0? 0: p.opacity;
       }
       this.context.fillStyle = "rgba(34,234,255,"+p.opacity+")";
       this.context.beginPath();
-      this.context.shadowBlur=10*p.size/window.devicePixelRatio;
+      //this.context.shadowBlur=10*p.size/window.devicePixelRatio;
       this.context.shadowColor= "rgba(255,234,255,"+p.opacity+")";
       this.context.arc(p.position.x, p.position.y, p.size, 0, Math.PI * 2, false);
       this.context.closePath();
@@ -102,14 +106,18 @@ fireflygroup.prototype = {
   }
 };
 
+
+
+
+
 function star(canvas,context){
   this.canvas = canvas;
   this.ctx = context;
   this.canvasWidth = this.canvas.clientWidth*window.devicePixelRatio;
   this.canvasHeight = this.canvas.clientHeight*window.devicePixelRatio;
-  this.maxstarnum = 50;
-  this.fly_size_range = [.5*window.devicePixelRatio, 1.5*window.devicePixelRatio];
-  this.fly_lifespan_range = [50, 80];
+  this.maxstarnum = 40;
+  this.fly_size_range = [.5*window.devicePixelRatio, 1.2*window.devicePixelRatio];
+  this.fly_lifespan_range = [ 50, 200];
   this.flies = [];
   this.init=(function(){
     this.canvas.width=this.canvasWidth;
@@ -131,12 +139,7 @@ star.prototype={
     this.size = options.size || self.randomRange(self.fly_size_range[0], self.fly_size_range[1]);
     this.lifeSpan = options.lifeSpan || self.randomRange(self.fly_lifespan_range[0], self.fly_lifespan_range[1]);
     this.age = 0;
-    this.colors = options.colors || {
-      red: 100,
-      green: 255,
-      blue: 253,
-      alpha: 0
-    };
+    this.alpha = 0;
   },
   clearScreen:function() {
     this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
@@ -151,16 +154,12 @@ star.prototype={
     this.flies.forEach(function(fly) {
       fly.age++;
       if (fly.age < fly.lifeSpan / 2) {
-        fly.colors.alpha += 1 / (fly.lifeSpan / 2);
-        if (fly.colors.alpha > .2) {
-          fly.colors.alpha = .2;
-        }
+        fly.alpha += 1 / (fly.lifeSpan / 2);
+        fly.alpha=fly.alpha>.2 ? .2 :fly.alpha;
       }else {
-        if(a++%10==0){
-          fly.colors.alpha -= 1 / (fly.lifeSpan / 2);
-          if (fly.colors.alpha < 0) {
-            fly.colors.alpha = 0;
-          }
+        if(a++%5==0){
+          fly.alpha -= 1 / (fly.lifeSpan / 2);
+          fly.alpha=fly.alpha<0 ? 0 : fly.alpha;
         }
       }
     });
@@ -179,7 +178,7 @@ star.prototype={
     self=this;
     this.flies.forEach(function(fly){
       self.ctx.beginPath();
-      self.ctx.fillStyle = 'rgba(' + fly.colors.red + ', ' + fly.colors.green + ', ' + fly.colors.blue + ', ' + fly.colors.alpha + ')';
+      self.ctx.fillStyle = 'rgba(100, 255, 253, ' + fly.alpha + ')';
       self.ctx.arc(
         fly.x,
         fly.y,
@@ -188,6 +187,7 @@ star.prototype={
         Math.PI * 2,
         false
       );
+      self.ctx.closePath();
       self.ctx.fill();
     });
   },
@@ -199,15 +199,28 @@ star.prototype={
     this.drawFlies();
   }
 }
+window.requestAnimFrame = (function(){
+    return  window.requestAnimationFrame       || 
+        window.webkitRequestAnimationFrame || 
+        window.mozRequestAnimationFrame    || 
+        window.oRequestAnimationFrame      || 
+        window.msRequestAnimationFrame     || 
+        function(callback, element){
+            return window.setTimeout(callback, 1000 / 30);
+        };
+})();
 var starcanvas=document.getElementById("starcanvas");
 var starcanvas_ctx=starcanvas.getContext("2d");
 var st=new star(starcanvas,starcanvas_ctx);
 var ffg=new fireflygroup(starcanvas,starcanvas_ctx);
-requestAnimationFrame(function(){
-  ffg.context.clearRect(0, 0, ffg.canvasWidth, ffg.canvasHeight);
-  st.render();
-  ffg.draw();
-  requestAnimationFrame(arguments.callee);
+var frame=0;
+requestAnimFrame(function(){
+  if(frame++%2==0){   
+    ffg.context.clearRect(0, 0, ffg.canvasWidth, ffg.canvasHeight);
+    st.render();
+    ffg.draw();
+  }
+  requestAnimFrame(arguments.callee);
 });
 
 
