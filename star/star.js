@@ -3,8 +3,8 @@ function fireflygroup(canvas,context,config){
   this.particleCount = 30;
   this.canvas = canvas;
   this.context = context;
-  this.canvasWidth=this.canvas.width=this.canvas.clientWidth;
-  this.canvasHeight=this.canvas.height=this.canvas.clientHeight;
+  this.canvasWidth=this.canvas.width=this.canvas.clientWidth*window.devicePixelRatio;
+  this.canvasHeight=this.canvas.height=this.canvas.clientHeight*window.devicePixelRatio;
   this.particles = [];
   this.deg=0;
   this.init=(function(){
@@ -50,7 +50,7 @@ fireflygroup.prototype = {
           x: 0, y: 0
         },
         wanderRadius: Math.random() * 300 + 100,
-        size : (Math.random() * 2 + 0.5),
+        size : (Math.random() * 2 + 0.5)*window.devicePixelRatio,
         color : "rgba(34,234,255,"+Math.random()+")",
         direction: Math.random() * Math.PI
       });
@@ -108,10 +108,10 @@ fireflygroup.prototype = {
 function star(canvas,context){
   this.canvas = canvas;
   this.ctx = context;
-  this.canvasWidth=this.canvas.width=this.canvas.clientWidth;
-  this.canvasHeight=this.canvas.height=this.canvas.clientHeight;
+  this.canvasWidth=this.canvas.width=this.canvas.clientWidth*window.devicePixelRatio;
+  this.canvasHeight=this.canvas.height=this.canvas.clientHeight*window.devicePixelRatio;
   this.maxstarnum = 40;
-  this.fly_size_range = [.5, 2];
+  this.fly_size_range = [.5, 1.6];
   this.fly_lifespan_range = [ 50, 200];
   this.flies = [];
   this.init=(function(){
@@ -129,7 +129,7 @@ star.prototype={
     }
     this.x = options.x || self.randomRange(0, self.canvasWidth);
     this.y = options.y || self.randomRange(0, self.canvasWidth);
-    this.size = options.size || self.randomRange(self.fly_size_range[0], self.fly_size_range[1]);
+    this.size = (options.size || self.randomRange(self.fly_size_range[0], self.fly_size_range[1]))*window.devicePixelRatio;
     this.lifeSpan = options.lifeSpan || self.randomRange(self.fly_lifespan_range[0], self.fly_lifespan_range[1]);
     this.age = 0;
     this.alpha = 0;
@@ -197,8 +197,8 @@ star.prototype={
 function MeteorGroup(cvs,ctx){
   this.canvas = cvs;
   this.context = ctx;
-  this.canvasWidth=this.canvas.width=this.canvas.clientWidth;
-  this.canvasHeight=this.canvas.height=this.canvas.clientHeight;
+  this.canvasWidth=this.canvas.width=this.canvas.clientWidth*window.devicePixelRatio;
+  this.canvasHeight=this.canvas.height=this.canvas.clientHeight*window.devicePixelRatio;
   this.meteorsNum=1;
   //流星栈
   this.meteors=[];
@@ -227,7 +227,7 @@ MeteorGroup.prototype={
     this.x = canvasWidth*Math.random()+80;
     this.y = 0;
     this.vx = -(4 + Math.random() * 10);
-    this.vy = -this.vx;
+    this.vy = -this.vx*2/3;
     this.lifeSpan=Math.random()*10+40;
     this.age=0;
     this.opacity=1;
@@ -242,9 +242,9 @@ MeteorGroup.prototype={
         meteor.age=0;
         meteor.x=this.canvasWidth*Math.random()+80;
         meteor.y = 0;
-        meteor.vx = -(4 + Math.random() * 10);
-        meteor.vy = -meteor.vx;
-        meteor.len = Math.random() * 100+40;
+        meteor.vx = -(4 + Math.random() * 10)*window.devicePixelRatio;
+        meteor.vy = -meteor.vx*2/3;
+        meteor.len = (Math.random() * 100+40)*window.devicePixelRatio;
         meteor.opacity=1;
       }
     }
@@ -268,9 +268,9 @@ MeteorGroup.prototype={
     this.ctx.fillStyle = gra
     this.ctx.beginPath()
     //流星头，二分之一圆
-    this.ctx.arc(this.x, this.y, 1, Math.PI / 4, 5 * Math.PI/ 4)
+    this.ctx.arc(this.x, this.y, 1*window.devicePixelRatio, Math.PI / 6, 5 * Math.PI/ 6)
     //绘制流星尾，三角形
-    this.ctx.lineTo(this.x + this.len, this.y - this.len)
+    this.ctx.lineTo(this.x + this.len, this.y - this.len*2/3)
     this.ctx.closePath()
     this.ctx.fill()
     this.ctx.restore()
