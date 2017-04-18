@@ -1,7 +1,7 @@
 var ratio=window.devicePixelRatio>1.5 ? 1.5 : window.devicePixelRatio;
 //萤火虫
 function fireflygroup(canvas,context,config){
-  this.particleCount = 30;
+  this.particleCount = 20;
   this.canvas = canvas;
   this.context = context;
   this.canvasWidth=this.canvas.width=this.canvas.clientWidth*ratio;
@@ -112,7 +112,7 @@ function star(canvas,context){
   this.canvasWidth=this.canvas.width=this.canvas.clientWidth*ratio;
   this.canvasHeight=this.canvas.height=this.canvas.clientHeight*ratio;
   this.maxstarnum = 40;
-  this.fly_size_range = [.5, 1.6];
+  this.fly_size_range = [.5, 1.4];
   this.fly_lifespan_range = [ 50, 200];
   this.flies = [];
   this.init=(function(){
@@ -130,7 +130,7 @@ star.prototype={
     }
     this.x = options.x || self.randomRange(0, self.canvasWidth);
     this.y = options.y || self.randomRange(0, self.canvasWidth);
-    this.size = (options.size || self.randomRange(self.fly_size_range[0], self.fly_size_range[1]))*ratio;
+    this.size = (options.size || self.randomRange(self.fly_size_range[0]*ratio, self.fly_size_range[1]))*ratio;
     this.lifeSpan = options.lifeSpan || self.randomRange(self.fly_lifespan_range[0], self.fly_lifespan_range[1]);
     this.age = 0;
     this.alpha = 0;
