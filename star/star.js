@@ -1,14 +1,13 @@
+//萤火虫
 function fireflygroup(canvas,context,config){
   this.particleCount = 30;
   this.canvas = canvas;
   this.context = context;
-  this.canvasWidth = this.canvas.clientWidth;
-  this.canvasHeight = this.canvas.clientHeight;
+  this.canvasWidth=this.canvas.width=this.canvas.clientWidth;
+  this.canvasHeight=this.canvas.height=this.canvas.clientHeight;
   this.particles = [];
   this.deg=0;
   this.init=(function(){
-    this.canvas.width=this.canvasWidth;
-    this.canvas.height=this.canvasHeight;
     this.addParticles();
   }).call(this)
 }
@@ -105,23 +104,17 @@ fireflygroup.prototype = {
     }
   }
 };
-
-
-
-
-
+//星星
 function star(canvas,context){
   this.canvas = canvas;
   this.ctx = context;
-  this.canvasWidth = this.canvas.clientWidth;
-  this.canvasHeight = this.canvas.clientHeight;
+  this.canvasWidth=this.canvas.width=this.canvas.clientWidth;
+  this.canvasHeight=this.canvas.height=this.canvas.clientHeight;
   this.maxstarnum = 40;
-  this.fly_size_range = [.5, 1.2];
+  this.fly_size_range = [.5, 2];
   this.fly_lifespan_range = [ 50, 200];
   this.flies = [];
   this.init=(function(){
-    this.canvas.width=this.canvasWidth;
-    this.canvas.height=this.canvasHeight;
     this.render();
   }).call(this)
 }
@@ -134,8 +127,8 @@ star.prototype={
     if (!options) {
       options = {};
     }
-    this.x = options.x || self.randomRange(0, self.canvas.width);
-    this.y = options.y || self.randomRange(0, self.canvas.width);
+    this.x = options.x || self.randomRange(0, self.canvasWidth);
+    this.y = options.y || self.randomRange(0, self.canvasWidth);
     this.size = options.size || self.randomRange(self.fly_size_range[0], self.fly_size_range[1]);
     this.lifeSpan = options.lifeSpan || self.randomRange(self.fly_lifespan_range[0], self.fly_lifespan_range[1]);
     this.age = 0;
@@ -199,6 +192,92 @@ star.prototype={
     this.drawFlies();
   }
 }
+
+//流星
+function MeteorGroup(cvs,ctx){
+  this.canvas = cvs;
+  this.context = ctx;
+  this.canvasWidth=this.canvas.width=this.canvas.clientWidth;
+  this.canvasHeight=this.canvas.height=this.canvas.clientHeight;
+  this.meteorsNum=1;
+  //流星栈
+  this.meteors=[];
+  this.init=(function(){ 
+    this.make();
+    var self=this;
+    setInterval(function(){
+      self.GC();
+    },3000)
+  }).call(this);
+}
+MeteorGroup.prototype={
+  make:function(){
+    for(var i=0;i<this.meteorsNum;i++){
+      this.meteors.push(
+        new this.Meteor(
+          this.context,
+          this.canvasWidth,
+          this.canvasHeight
+        )
+      )
+    };
+  },
+  Meteor:function(ctx,canvasWidth,canvasHeight) {
+    this.ctx=ctx;
+    this.x = canvasWidth*Math.random()+80;
+    this.y = 0;
+    this.vx = -(4 + Math.random() * 10);
+    this.vy = -this.vx;
+    this.lifeSpan=Math.random()*10+40;
+    this.age=0;
+    this.opacity=1;
+    this.len = Math.random() * 100+40;
+  },
+  //回收
+  GC:function(){
+    var i = this.meteors.length;
+    while (i--) {
+      var meteor = this.meteors[i];
+      if (meteor.age >= meteor.lifeSpan) {
+        meteor.age=0;
+        meteor.x=this.canvasWidth*Math.random()+80;
+        meteor.y = 0;
+        meteor.vx = -(4 + Math.random() * 10);
+        meteor.vy = -meteor.vx;
+        meteor.len = Math.random() * 100+40;
+        meteor.opacity=1;
+      }
+    }
+  },
+  drawMeteorGoup:function(){
+    for(var i=0;i<this.meteors.length;i++){
+      this.meteors[i].y=this.meteors[i].y+this.meteors[i].vy;
+      this.meteors[i].x=this.meteors[i].x+this.meteors[i].vx;
+      this.draw.call(this.meteors[i]);
+    }
+  },
+  //绘制流星
+  draw:function() {
+    //径向渐变，从流星头尾圆心，半径越大，透明度越高
+    gra = this.ctx.createRadialGradient(this.x, this.y, 0, this.x, this.y, this.len);
+    this.age++;
+    this.opacity -= 1/this.lifeSpan;
+    gra.addColorStop(0, 'rgba(100, 255, 253,'+this.opacity+')')
+    gra.addColorStop(1, 'rgba(255,255,255,0)')
+    this.ctx.save()
+    this.ctx.fillStyle = gra
+    this.ctx.beginPath()
+    //流星头，二分之一圆
+    this.ctx.arc(this.x, this.y, 1, Math.PI / 4, 5 * Math.PI/ 4)
+    //绘制流星尾，三角形
+    this.ctx.lineTo(this.x + this.len, this.y - this.len)
+    this.ctx.closePath()
+    this.ctx.fill()
+    this.ctx.restore()
+  }
+} 
+
+
 window.requestAnimFrame = (function(){
     return  window.requestAnimationFrame       || 
         window.webkitRequestAnimationFrame || 
@@ -213,12 +292,14 @@ var starcanvas=document.getElementById("starcanvas");
 var starcanvas_ctx=starcanvas.getContext("2d");
 var st=new star(starcanvas,starcanvas_ctx);
 var ffg=new fireflygroup(starcanvas,starcanvas_ctx);
+var mg=new MeteorGroup(starcanvas,starcanvas_ctx);
 var frame=0;
 requestAnimFrame(function(){
   if(frame++%2==0){   
     ffg.context.clearRect(0, 0, ffg.canvasWidth, ffg.canvasHeight);
     st.render();
     ffg.draw();
+    mg.drawMeteorGoup();
   }
   requestAnimFrame(arguments.callee);
 });
