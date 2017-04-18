@@ -1,10 +1,11 @@
+var ratio=window.devicePixelRatio>1.5 ? 1.5 : window.devicePixelRatio;
 //萤火虫
 function fireflygroup(canvas,context,config){
   this.particleCount = 30;
   this.canvas = canvas;
   this.context = context;
-  this.canvasWidth=this.canvas.width=this.canvas.clientWidth*window.devicePixelRatio;
-  this.canvasHeight=this.canvas.height=this.canvas.clientHeight*window.devicePixelRatio;
+  this.canvasWidth=this.canvas.width=this.canvas.clientWidth*ratio;
+  this.canvasHeight=this.canvas.height=this.canvas.clientHeight*ratio;
   this.particles = [];
   this.deg=0;
   this.init=(function(){
@@ -50,7 +51,7 @@ fireflygroup.prototype = {
           x: 0, y: 0
         },
         wanderRadius: Math.random() * 300 + 100,
-        size : (Math.random() * 2 + 0.5)*window.devicePixelRatio,
+        size : (Math.random() * 2 + 0.5)*ratio,
         color : "rgba(34,234,255,"+Math.random()+")",
         direction: Math.random() * Math.PI
       });
@@ -87,7 +88,7 @@ fireflygroup.prototype = {
     this.deg++;
     for(var i = 0; i < this.particles.length; i++) {
       var p = this.particles[i];
-      if(this.deg%6==1 && p.size>window.devicePixelRatio*1.6){
+      if(this.deg%6==1 && p.size>ratio*1.6){
         p.loopdir= p.opacity>=1 ? -1 : p.loopdir;
         p.loopdir= p.opacity<=.4 ? 1 : p.loopdir;
         p.opacity+=.1*p.loopdir;
@@ -96,7 +97,7 @@ fireflygroup.prototype = {
       }
       this.context.fillStyle = "rgba(34,234,255,"+p.opacity+")";
       this.context.beginPath();
-      //this.context.shadowBlur=10*p.size/window.devicePixelRatio;
+      //this.context.shadowBlur=10*p.size/ratio;
       this.context.shadowColor= "rgba(255,234,255,"+p.opacity+")";
       this.context.arc(p.position.x, p.position.y, p.size, 0, Math.PI * 2, false);
       this.context.closePath();
@@ -108,8 +109,8 @@ fireflygroup.prototype = {
 function star(canvas,context){
   this.canvas = canvas;
   this.ctx = context;
-  this.canvasWidth=this.canvas.width=this.canvas.clientWidth*window.devicePixelRatio;
-  this.canvasHeight=this.canvas.height=this.canvas.clientHeight*window.devicePixelRatio;
+  this.canvasWidth=this.canvas.width=this.canvas.clientWidth*ratio;
+  this.canvasHeight=this.canvas.height=this.canvas.clientHeight*ratio;
   this.maxstarnum = 40;
   this.fly_size_range = [.5, 1.6];
   this.fly_lifespan_range = [ 50, 200];
@@ -129,7 +130,7 @@ star.prototype={
     }
     this.x = options.x || self.randomRange(0, self.canvasWidth);
     this.y = options.y || self.randomRange(0, self.canvasWidth);
-    this.size = (options.size || self.randomRange(self.fly_size_range[0], self.fly_size_range[1]))*window.devicePixelRatio;
+    this.size = (options.size || self.randomRange(self.fly_size_range[0], self.fly_size_range[1]))*ratio;
     this.lifeSpan = options.lifeSpan || self.randomRange(self.fly_lifespan_range[0], self.fly_lifespan_range[1]);
     this.age = 0;
     this.alpha = 0;
@@ -197,8 +198,8 @@ star.prototype={
 function MeteorGroup(cvs,ctx){
   this.canvas = cvs;
   this.context = ctx;
-  this.canvasWidth=this.canvas.width=this.canvas.clientWidth*window.devicePixelRatio;
-  this.canvasHeight=this.canvas.height=this.canvas.clientHeight*window.devicePixelRatio;
+  this.canvasWidth=this.canvas.width=this.canvas.clientWidth*ratio;
+  this.canvasHeight=this.canvas.height=this.canvas.clientHeight*ratio;
   this.meteorsNum=1;
   //流星栈
   this.meteors=[];
@@ -224,7 +225,7 @@ MeteorGroup.prototype={
   },
   Meteor:function(ctx,canvasWidth,canvasHeight) {
     this.ctx=ctx;
-    this.x = canvasWidth*Math.random()+80;
+    this.x = canvasWidth*Math.random()+20*ratio;
     this.y = 0;
     this.vx = -(4 + Math.random() * 10);
     this.vy = -this.vx*2/3;
@@ -242,9 +243,9 @@ MeteorGroup.prototype={
         meteor.age=0;
         meteor.x=this.canvasWidth*Math.random()+80;
         meteor.y = 0;
-        meteor.vx = -(4 + Math.random() * 10)*window.devicePixelRatio;
+        meteor.vx = -(4 + Math.random() * 10)*ratio;
         meteor.vy = -meteor.vx*2/3;
-        meteor.len = (Math.random() * 100+40)*window.devicePixelRatio;
+        meteor.len = (Math.random() * 100+40)*ratio;
         meteor.opacity=1;
       }
     }
@@ -268,7 +269,7 @@ MeteorGroup.prototype={
     this.ctx.fillStyle = gra
     this.ctx.beginPath()
     //流星头，二分之一圆
-    this.ctx.arc(this.x, this.y, 1*window.devicePixelRatio, Math.PI / 6, 5 * Math.PI/ 6)
+    this.ctx.arc(this.x, this.y, 1*ratio, Math.PI / 6, 5 * Math.PI/ 6)
     //绘制流星尾，三角形
     this.ctx.lineTo(this.x + this.len, this.y - this.len*2/3)
     this.ctx.closePath()
