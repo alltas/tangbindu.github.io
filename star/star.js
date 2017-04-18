@@ -207,7 +207,9 @@ function MeteorGroup(cvs,ctx){
     this.make();
     var self=this;
     setInterval(function(){
-      self.GC();
+      setTimeout(function(){
+        self.GC();
+      },2000*Math.random())
     },3000)
   }).call(this);
 }
@@ -225,14 +227,14 @@ MeteorGroup.prototype={
   },
   Meteor:function(ctx,canvasWidth,canvasHeight) {
     this.ctx=ctx;
-    this.x = canvasWidth*Math.random()+20*ratio;
+    this.x = canvasWidth*Math.random()+80*ratio;
     this.y = 0;
     this.vx = -(4 + Math.random() * 10);
     this.vy = -this.vx*2/3;
     this.lifeSpan=Math.random()*10+40;
     this.age=0;
     this.opacity=1;
-    this.len = Math.random() * 100+40;
+    this.len = (Math.random() * 200+30)*ratio;
   },
   //回收
   GC:function(){
@@ -241,11 +243,11 @@ MeteorGroup.prototype={
       var meteor = this.meteors[i];
       if (meteor.age >= meteor.lifeSpan) {
         meteor.age=0;
-        meteor.x=this.canvasWidth*Math.random()+80;
+        meteor.x=this.canvasWidth*Math.random()+80*ratio;
         meteor.y = 0;
         meteor.vx = -(4 + Math.random() * 10)*ratio;
         meteor.vy = -meteor.vx*2/3;
-        meteor.len = (Math.random() * 100+40)*ratio;
+        meteor.len = (Math.random() * 200+30)*ratio;
         meteor.opacity=1;
       }
     }
