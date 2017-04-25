@@ -111,7 +111,8 @@ config={
 		],
 		"class":[
 			"c-nowrap",
-			"c-nowrap-multi"
+			"c-nowrap-multi",
+			"ui-list-info"
 		],
 		"style":[
 			"style-font",
