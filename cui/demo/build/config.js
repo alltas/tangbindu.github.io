@@ -91,8 +91,11 @@ config={
 		"ui-slider":[
 			"ui-slider"
 		],
-		"card-page":[
-			"card-page"
+		"page-card":[
+			"page-card"
+		],
+		"page-single":[
+			"page-single"
 		],
 		"dialog":[
 			"dialog"
@@ -133,7 +136,8 @@ config={
 	"iframe":[
 		"dialog",
 		"swipe",
-		"card-page",
+		"page-card",
+		"page-single",
 		"ui-slider",
 		"ec-searchbar"
 	],
