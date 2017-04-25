@@ -806,7 +806,7 @@ function compositeFrame(){
     var compositeFrameHeight=0;
     for(var i=0,il=imgs.length;i<il;i++){
         compositeFrameWidth+=imgs.eq(i)[0].naturalWidth;
-        compositeFrameHeight=imgs.eq(i)[0].naturalHeight;
+        compositeFrameHeight=imgs.eq(i)[0].naturalHeight>compositeFrameHeight ? imgs.eq(i)[0].naturalHeight : compositeFrameHeight;
     }
     var canvas = document.createElement("canvas");
     var ctx = canvas.getContext("2d");
