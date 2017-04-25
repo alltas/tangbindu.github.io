@@ -129,7 +129,8 @@ config={
 			"style-keyframes",
 			"style-animation",
 			"style-nowrap-multi",
-			"style-nowrap"
+			"style-nowrap",
+			"style-gradient-linear"
 		],
 	},
 	//iframe结构的
