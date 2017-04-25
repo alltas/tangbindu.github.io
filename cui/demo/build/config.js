@@ -130,6 +130,7 @@ config={
 			"style-animation",
 			"style-nowrap-multi",
 			"style-nowrap",
+			"style-after-or-before",
 			"style-gradient-linear"
 		],
 	},
