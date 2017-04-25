@@ -65,6 +65,7 @@
         </div>
         <!--调整图片的留白-->
         <ul class="resize-icon-more">
+          <!--四周留白-->
           <li class="padding">
             <form action="#" onsubmit="return false"><span class="text-tag">四周留白:&nbsp;</span>
               <input type="text" id="resize-icon-padding-val" class="padding input input-number"/><span class="text-tag">px</span>
@@ -75,13 +76,17 @@
           <li class="normalFuntion"><span class="text-tag">偶数尺寸:&nbsp;</span>
             <button id="resize-icon-even" class="btn">调整</button>
           </li>
+          <!--获取sthle-->
+          <li class="normalFuntion"><span class="text-tag">获取&nbsp;&nbsp;css:&nbsp;</span>
+            <button id="get-style" class="btn">style</button>
+          </li>
+          <!--序列帧-->
+          <li class="normalFuntion"><span class="text-tag">合序列帧:&nbsp;</span>
+            <button id="composite-frame" class="btn">合成</button>
+          </li>
           <!--常用调整-->
           <li class="normalFuntion"><span class="text-tag">前缀:&nbsp;
               <input type="text" id="icon-name-before" value="icon" class="input double"/></span><span class="text-tag">icon1.png</span></li>
-          <!--获取sthle-->
-          <li class="normalFuntion"><span class="text-tag">get style:&nbsp;</span>
-            <button id="get-style" class="btn">style</button>
-          </li>
         </ul>
         <!--现在全部-->
         <button id="icon-download-all"><span>&#xe602;</span>打包下载</button>
@@ -104,9 +109,11 @@
     </div>
     <script src="js/jquery-2.1.4.min.js"></script>
     <script src="js/Icon.min.js"></script>
+    <!--script(src="js/Icon.js")-->
     <!--前台交互区-->
     <script src="js/jszip.min.js"></script>
     <script src="js/front.min.js"></script>
+    <!--script(src="js/front.js")-->
     <!--交互区-->
     <script src="js/bridge.min.js"></script>
     <!--快捷操作-->

@@ -62,6 +62,7 @@ html
             button(type="submit")#resize-icon-btn.btn 调整
         //调整图片的留白
         ul.resize-icon-more
+          //四周留白
           li.padding
             form(action="#" onsubmit="return false")
               span.text-tag 四周留白:&nbsp;
@@ -72,15 +73,19 @@ html
           li.normalFuntion
             span.text-tag 偶数尺寸:&nbsp;
             button#resize-icon-even.btn 调整
+          //获取sthle
+          li.normalFuntion
+            span.text-tag 获取&nbsp;&nbsp;css:&nbsp;
+            button#get-style.btn style
+          //序列帧
+          li.normalFuntion
+            span.text-tag 合序列帧:&nbsp;
+            button#composite-frame.btn 合成
           //常用调整
           li.normalFuntion
             span.text-tag 前缀:&nbsp;
               input(type="text" id="icon-name-before" value="icon").input.double
             span.text-tag icon1.png
-          //获取sthle
-          li.normalFuntion
-            span.text-tag get style:&nbsp;
-            button#get-style.btn style
         //现在全部
         button#icon-download-all 
           span &#xe602;
@@ -99,9 +104,11 @@ html
           textarea
     script(src="js/jquery-2.1.4.min.js")
     script(src="js/Icon.min.js")
+    //script(src="js/Icon.js")
     //前台交互区
     script(src="js/jszip.min.js")
     script(src="js/front.min.js")
+    //script(src="js/front.js")
     //交互区
     script(src="js/bridge.min.js")
     //快捷操作
