@@ -38,7 +38,7 @@ var demo20=function(){
     gl.bindBuffer(gl.ARRAY_BUFFER, vertexTexCoordBuffer);
     gl.bufferData(gl.ARRAY_BUFFER, verticesTexCoords, gl.STATIC_DRAW);
     var FSIZE = verticesTexCoords.BYTES_PER_ELEMENT;
-    console.dir(verticesTexCoords)
+    //console.dir(verticesTexCoords)
     var a_Position = gl.getAttribLocation(gl.program, 'a_Position');
     gl.vertexAttribPointer(a_Position, 2, gl.FLOAT, false, FSIZE * 4, 0);
     gl.enableVertexAttribArray(a_Position);  

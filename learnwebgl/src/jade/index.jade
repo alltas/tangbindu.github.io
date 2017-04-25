@@ -13,13 +13,12 @@ html(data-use-rem)
     link(rel="stylesheet",href="../css/index.css")
     link(rel="stylesheet",href="../css/code.css")
   body(ontouchstart="")
-    -for(var i=1;i<24;i++)
+    script(src="../js/common/cuon-matrix.js")
+    -for(var i=1;i<19;i++)
       section(id="demo#{i}")
         canvas(id="demo#{i}_canvas")
         script(src="../js/demo#{i}.js")
     .category
-
-
     script(src="../js/common/jquery.min.js")
     script(src="../js/common/index.js")
     script(src="../js/common/run_prettify.js")
