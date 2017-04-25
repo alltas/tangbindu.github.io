@@ -800,6 +800,7 @@ function compositeFrame(){
     var imgs=clipImgWrap.find("img");
     if(imgs.length<2){
         alert("舞台上没有图片，或者少于2张")
+        return false;
     }
     var compositeFrameWidth=0;
     var compositeFrameHeight=0;
