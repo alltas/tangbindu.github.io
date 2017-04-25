@@ -91,6 +91,9 @@ config={
 		"ui-slider":[
 			"ui-slider"
 		],
+		"layout":[
+			"layout"
+		],
 		"page-card":[
 			"page-card"
 		],
