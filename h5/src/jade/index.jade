@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+html
+head
+  meta(charset="UTF-8")
+  title js阻塞HTML parse
+body
+  -for(var i=1;i<50;i++)
+    div
+      h1 一行标题
+      p 一行内容
+  script.
+    var i=0; 
+    while(i<10000){
+      i++;
+    }
+  -for(var i=1;i<50;i++)
+    div
+      h1 一行标题
+      p 一行内容
