@@ -85,6 +85,9 @@ config={
 			"lm-widget2",
 			"lm-widget-banner"
 		],
+		"lm-pm-resources":[
+			"lm-pm-resources"
+		],
 		"lm-tab":[
 			"lm-tab"
 		],
@@ -134,7 +137,8 @@ config={
 		"swipe",
 		"card-page",
 		"ui-slider",
-		"ec-searchbar"
+		"ec-searchbar",
+		"lm-pm-resources"
 	],
 	//不显示的组合
 	"noview":[
