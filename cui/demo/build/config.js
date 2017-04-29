@@ -94,8 +94,14 @@ config={
 		"ui-slider":[
 			"ui-slider"
 		],
-		"card-page":[
-			"card-page"
+		"layout":[
+			"layout"
+		],
+		"page-card":[
+			"page-card"
+		],
+		"page-single":[
+			"page-single"
 		],
 		"dialog":[
 			"dialog"
@@ -114,7 +120,8 @@ config={
 		],
 		"class":[
 			"c-nowrap",
-			"c-nowrap-multi"
+			"c-nowrap-multi",
+			"ui-list-info"
 		],
 		"style":[
 			"style-font",
@@ -128,14 +135,17 @@ config={
 			"style-keyframes",
 			"style-animation",
 			"style-nowrap-multi",
-			"style-nowrap"
+			"style-nowrap",
+			"style-after-or-before",
+			"style-gradient-linear"
 		],
 	},
 	//iframe结构的
 	"iframe":[
 		"dialog",
 		"swipe",
-		"card-page",
+		"page-card",
+		"page-single",
 		"ui-slider",
 		"ec-searchbar",
 		"lm-pm-resources"
