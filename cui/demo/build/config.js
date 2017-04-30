@@ -75,6 +75,11 @@ config={
 			"ec-list.c-border-tb",
 			"ec-list-v1"
 		],
+		"lm-ico":[
+			"lm-ico-bean",
+			"lm-ico-crystal",
+			"lm-ico-gold-coins"
+		],
 		"lm-list":[
 			"lm-list",
 			"lm-list.lm-list-avatar",
