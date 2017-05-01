@@ -78,7 +78,11 @@ config={
 		"lm-ico":[
 			"lm-ico-bean",
 			"lm-ico-crystal",
-			"lm-ico-gold-coins"
+			"lm-ico-gold-coins",
+			"lm-ico-time",
+			"lm-ico-population",
+			"lm-ico-box",
+			"lm-ico-upgrade",
 		],
 		"lm-list":[
 			"lm-list",
