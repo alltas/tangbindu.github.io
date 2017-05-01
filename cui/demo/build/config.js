@@ -83,6 +83,7 @@ config={
 			"lm-ico-population",
 			"lm-ico-box",
 			"lm-ico-upgrade",
+			"lm-ico-star"
 		],
 		"lm-list":[
 			"lm-list",
