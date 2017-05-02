@@ -98,6 +98,12 @@ config={
 		"lm-pm-resources":[
 			"lm-pm-resources"
 		],
+		"input":[
+			"input"
+		],
+		"textarea":[
+			"textarea"
+		],
 		"lm-tab":[
 			"lm-tab"
 		],
@@ -115,6 +121,9 @@ config={
 		],
 		"dialog":[
 			"dialog"
+		],
+		"notice":[
+			"notice"
 		],
 		"swipe":[
 			"swipe"
@@ -158,6 +167,7 @@ config={
 		"page-single",
 		"ui-slider",
 		"ec-searchbar",
+		"notice",
 		"lm-pm-resources"
 	],
 	//不显示的组合
